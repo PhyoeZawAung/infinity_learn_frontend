@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard - Teacher</title>
+    <link href="../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        button {
+            border-radius: 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">Infinity Learn</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="bi bi-list h4"></i></button>
+        <ul class="ms-auto navbar-nav ms-auto  me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="bi bi-person-circle h3"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Profile</a></li>
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link active" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
+                            Courses
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
+                            Students
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
+                            Messages
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
+                            Notifications
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Phyoe Zaw Aung
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+
+                    <h1 class="mt-4">Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                    <h4>Course Overview</h4>
+                    <p><i>A beginner-friendly course that introduces key data science concepts,
+                            including Python programming, data analysis, and machine learning fundamentals.
+                            Perfect for those looking to start a career in data science.</i></p>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Learning Objectives</h5>
+                                    <p class="card-text">
+                                        By the end of the course, learners will:<br>
+                                        <i class="bi bi-check">Understand data science fundamentals</i><br>
+                                        <i class="bi bi-check">Work with Python libraries like Pandas and NumPy</i><br>
+                                        <i class="bi bi-check">Perform data visualization and analysis</i><br>
+                                        <i class="bi bi-check"> Build and evaluate machine learning models</i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Course Format</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-dot">Module 1: Introduction to Data Science</i><br>
+                                        <i class="bi bi-dot">Module 2: Python for Data Analysis</i><br>
+                                        <i class="bi bi-dot">Module 3: Data Visualization with Matplotlib &
+                                            Seaborn</i><br>
+                                        <i class="bi bi-dot">Module 4: Machine Learning Basics</i><br>
+                                        <i class="bi bi-dot">Module 5: Hands-on Project & Case Studies</i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Page Content -->
+                    <div class="container">
+
+                        <!-- Page Heading -->
+                        <h3 class="my-4">Business &
+                            <small>Marketing</small>
+                        </h3>
+
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="business.webp" alt=""><br><br>                                  
+                                    </a>               
+                                        <div class="container text-center">
+                                            <div class="row align-items-center">
+                                              <div class="col">
+                                               4.7 
+                                              </div>
+                                              <div class="col">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                              </div>
+                                              <div class="col">
+                                                1,420,288 students
+                                              </div>
+                                            </div>
+                                          </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Digital Marketing Mastery</i></h4>
+                                <h6>Descriptions:</h6>
+                                <p>
+                                    Learn the fundamentals of digital marketing, including SEO, content marketing,
+                                    social media strategy,
+                                    and paid advertising. This course covers the latest tools and techniques to drive
+                                    online success.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Introduction to Digital Marketing</i><br>
+                                    <i class="bi bi-dot">SEO & Content Marketing</i><br>
+                                    <i class="bi bi-dot">Social Media Marketing</i><br>
+                                    <i class="bi bi-dot">Google Ads & PPC Advertising</i><br>
+                                    <i class="bi bi-dot">Email & Affiliate Marketing</i><br>
+                                    <i class="bi bi-dot">Analytics & Performance Tracking</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                        </div>
+                        <!-- /.row -->
+
+                        <hr>
+
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="marketing.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Entrepreneurship & Startup Growth</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Learn how to start, fund, and grow a successful business. This course covers
+                                    business models,
+                                    market validation, fundraising, and scaling strategies.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Idea Validation & Business Models</i><br>
+                                    <i class="bi bi-dot">Market Research & Customer Acquisition</i><br>
+                                    <i class="bi bi-dot">Funding & Investor Pitching</i><br>
+                                    <i class="bi bi-dot">Growth Hacking & Scaling</i><br>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                    <!-- Page Content -->
+                    <div class="container">
+
+                        <!-- Page Heading -->
+                        <h3 class="my-4">Technology &
+                            <small>Programming</small>
+                        </h3>
+
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="technology.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Full-Stack Web Development</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Master front-end and back-end development using HTML, CSS, JavaScript, React,
+                                    Node.js,
+                                    and databases. Build real-world projects and become job-ready.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">HTML & CSS Fundamentals</i><br>
+                                    <i class="bi bi-dot">JavaScript & Front-End Development</i><br>
+                                    <i class="bi bi-dot">Back-End Development with Node.js</i><br>
+                                    <i class="bi bi-dot">Database Management (SQL & MongoDB)</i><br>
+                                    <i class="bi bi-dot">Full-Stack Application Deployment</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <hr>
+
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="programming.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Cybersecurity Essentials</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Understand the fundamentals of cybersecurity, ethical hacking, and risk management.
+                                    Learn how to protect systems from cyber threats
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Cybersecurity Fundamentals</i><br>
+                                    <i class="bi bi-dot">Ethical Hacking & Penetration Testing</i><br>
+                                    <i class="bi bi-dot">Network Security & Firewalls</i><br>
+                                    <i class="bi bi-dot">Incident Response & Risk Management</i><br>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                    <!-- Page Content -->
+                    <div class="container">
+
+                        <!-- Page Heading -->
+                        <h3 class="my-4">Design &
+                            <small>Creativity</small>
+                        </h3>
+
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="design.webp" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Graphic Design with Photoshop & Illustrator</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Learn graphic design principles, typography, branding, and Adobe Photoshop &
+                                    Illustrator tools for creating stunning visuals.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Basics of Design & Color Theory</i><br>
+                                    <i class="bi bi-dot">Logo & Branding Design</i><br>
+                                    <i class="bi bi-dot">Social Media Graphics & Marketing Materials</i><br>
+                                    <i class="bi bi-dot">Advanced Photoshop & Illustrator Techniques</i><br>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <hr>
+
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="creativity.png" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:UX/UI Design for Web & Mobil</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Understand user experience (UX) and user interface (UI) design principles
+                                    for creating intuitive websites and mobile applications.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">UX Research & Wireframing</i><br>
+                                    <i class="bi bi-dot">UI Design & Prototyping</i><br>
+                                    <i class="bi bi-dot">Design Tools (Figma, Adobe XD)</i><br>
+                                    <i class="bi bi-dot">Testing & User Feedback</i><br>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                    <!-- Page Content -->
+                    <div class="container">
+
+                        <!-- Page Heading -->
+                        <h3 class="my-4">Personal Development &
+                            <small>Soft Skills</small>
+                        </h3>
+
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="development.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Public Speaking & Presentation Skills</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Overcome fear, develop confidence, and master the art of delivering
+                                    engaging speeches and presentations.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Overcoming Stage Fear</i><br>
+                                    <i class="bi bi-dot">Voice Modulation & Body Language</i><br>
+                                    <i class="bi bi-dot">Storytelling & Persuasion Techniques</i><br>
+                                    <i class="bi bi-dot">Effective Presentation Structure</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <hr>
+
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="intelligence.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course: Emotional Intelligence & Leadership</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Learn how to improve emotional intelligence (EQ) to enhance leadership,
+                                    teamwork, and communication skills.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Understanding Emotional Intelligence</i><br>
+                                    <i class="bi bi-dot">Managing Emotions & Conflict Resolution</i><br>
+                                    <i class="bi bi-dot">Leadership & Decision Making</i><br>
+                                    <i class="bi bi-dot">Building High-Performing Teams</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                    <!-- Page Content -->
+                    <div class="container">
+
+                        <!-- Page Heading -->
+                        <h3 class="my-4">Health &
+                            <small>Wellness</small>
+                        </h3>
+
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="stress.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Mindfulness & Stress Management</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Develop mindfulness techniques to reduce stress, improve focus,
+                                    and enhance overall well-being.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Introduction to Mindfulness</i><br>
+                                    <i class="bi bi-dot">Meditation & Breathing Techniques</i><br>
+                                    <i class="bi bi-dot">Stress Management Strategies</i><br>
+                                    <i class="bi bi-dot">Building a Healthy Routine</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <hr>
+
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="yoga.png" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Yoga & Fitness for Beginners</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    A complete guide to yoga postures, flexibility exercises, and strength training
+                                    for a balanced and healthy lifestyle.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Yoga Basics & Stretching</i><br>
+                                    <i class="bi bi-dot">Strength & Flexibility Training</i><br>
+                                    <i class="bi bi-dot">Breathwork & Meditation</i><br>
+                                    <i class="bi bi-dot">Building a Daily Fitness Routine</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                    <!-- Page Content -->
+                    <div class="container">
+
+                        <!-- Page Heading -->
+                        <h3 class="my-4">Finance &
+                            <small>Investing</small>
+                        </h3>
+
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="finance.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course: Personal Finance & Budgeting</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Learn how to manage your finances, create a budget, and make smart financial
+                                    decisions for a secure future.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Financial Planning & Goal Setting</i><br>
+                                    <i class="bi bi-dot">Budgeting & Expense Tracking</i><br>
+                                    <i class="bi bi-dot">Saving & Debt Management</i><br>
+                                    <i class="bi bi-dot">Investing Basics</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="invest.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Stock Market & Cryptocurrency Investing</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Understand the fundamentals of stock market investing and cryptocurrency
+                                    trading to build wealth.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Stock Market Basics & Risk Management</i><br>
+                                    <i class="bi bi-dot">Cryptocurrency & Blockchain Fundamentals</i><br>
+                                    <i class="bi bi-dot">Trading Strategies & Portfolio Management</i><br>
+                                    <i class="bi bi-dot">Analyzing Market Trends</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                    <!-- Page Content -->
+                    <div class="container">
+
+                        <!-- Page Heading -->
+                        <h3 class="my-4">Language &
+                            <small>Communication</small>
+                        </h3>
+
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="english.jpg" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:English for Beginners & Professionals</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Improve English grammar, vocabulary, and communication skills for daily use
+                                    and business interactions
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Grammar & Sentence Structure</i><br>
+                                    <i class="bi bi-dot">Speaking & Pronunciation</i><br>
+                                    <i class="bi bi-dot">Business English & Writing Skills</i><br>
+                                    <i class="bi bi-dot">Conversational English Practice</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <hr>
+
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="Blogging.png" alt="">
+                                </a><br><br>
+                                <div class="container text-center">
+                                    <div class="row align-items-center">
+                                      <div class="col">
+                                       4.7 
+                                      </div>
+                                      <div class="col">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                      </div>
+                                      <div class="col">
+                                        1,420,288 students
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h4><i>Course:Writing & Blogging for Impact</i></h4>
+                                <h6>Overview:</h6>
+                                <p>
+                                    Learn how to create engaging blog content, improve writing skills, and
+                                    monetize a blog.
+                                </p>
+                                <h6>Course Lessons:</h6>
+                                <p>
+                                    <i class="bi bi-dot">Writing Styles & Techniques</i><br>
+                                    <i class="bi bi-dot">SEO & Content Optimization</i><br>
+                                    <i class="bi bi-dot">Blogging Platforms & Monetization</i><br>
+                                    <i class="bi bi-dot">Building an Audience</i>
+                                </p>
+                                <h6>Course Content:</h6>
+                                <i class="bi bi-play-circle"> Course Intro</i><br>
+                                <i class="bi bi-play-circle"> Watch full video</i><br><br>
+                                <button type="submit">Apply Now </button><br><br>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Infinity Learn 2025</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
