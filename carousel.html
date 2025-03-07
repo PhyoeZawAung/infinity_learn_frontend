@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Courses Slider</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <style>
+        body {
+            background-color: rgb(74, 74, 209);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 280px;
+        }
+
+        .swiper-slide h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Centered slide is larger */
+        .swiper-slide-active {
+            transform: scale(1.15);
+        }
+
+        .swiper-button-prev, .swiper-button-next {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5 text-center">
+    <h2 class="fw-bold">Courses We Offer</h2>
+
+    <!-- Swiper Slider -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h4>Language Proficiency</h4>
+                <p>Learn to communicate effectively in multiple languages ...</p>
+            </div>
+            <div class="swiper-slide">
+                <h4>Computer Science</h4>
+                <p>Understand how computers and algorithms solve real-world problems...</p>
+            </div>
+            <div class="swiper-slide">
+                <h4>Arts and Well Being</h4>
+                <p>Explore creativity and mindfulness through artistic expression...</p>
+            </div>
+            <div class="swiper-slide">
+                <h4>Business</h4>
+                <p>Develop entrepreneurial skills and business strategies...</p>
+            </div>
+            <div class="swiper-slide">
+                <h4>Health and Beauty</h4>
+                <p>Discover self-care techniques for better health and confidence...</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true, /* Center the slides properly */
+        slidesPerView: 'auto', /* Show all slides properly with dynamic width */
+        spaceBetween: 20,
+        loop: true, 
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 150,
+            modifier: 1.2,
+            slideShadows: true,
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            1024: { slidesPerView: 3 }, /* Desktop: 3 slides */
+            768: { slidesPerView: 2 },  /* Tablet: 2 slides */
+            480: { slidesPerView: 1 }   /* Mobile: 1 slide */
+        }
+    });
+</script>
+
+</body>
+</html>

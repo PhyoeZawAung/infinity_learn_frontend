@@ -1,0 +1,156 @@
+body {
+    padding-top: 3em; /* Adjust this value depending on the navbar height */
+}
+
+
+@media (min-width: 768px) {
+    .btn-register, .btn-learn {
+        width: auto;
+    }
+}
+
+/* Swiper Slider */
+
+
+.swiper-slide {
+    background: rgba(20, 190, 173, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+}
+
+.swiper-slide h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Active slide effect */
+.swiper-slide-active {
+    transform: scale(1.15);
+}
+
+
+/* Instructor Section */
+.instructors-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.instructor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.instructor-logos img {
+    height: 70px;
+    max-width: 100%;
+}
+
+/* Carousel Section */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: hidden; /* Prevent unnecessary scrolling */
+}
+
+.carousel-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 2vw; /* Responsive button */
+    cursor: pointer;
+    color: #6a0dad;
+}
+
+#logoCarousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    gap: 30px;
+    max-width: 85%;
+    padding: 10px;
+}
+
+.logo-item {
+    width: 100px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries */
+@media (max-width: 1440px) {
+    .swiper {
+        width: 95%;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5vw;
+    }
+
+    .hero-text p {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .swiper-slide {
+        height: 250px;
+        padding: 20px;
+    }
+
+    .swiper-slide h4 {
+        font-size: 1.3rem;
+    }
+
+    .hero-section {
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 4vw;
+    }
+
+    .hero-text p, .hero-text a {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        flex-direction: column;
+    }
+
+    #logoCarousel {
+        max-width: 100%;
+    }
+
+    .carousel-btn {
+        font-size: 4vw;
+    }
+}
+
