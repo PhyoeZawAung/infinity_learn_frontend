@@ -16,7 +16,7 @@
     <div class="container-fluid d-flex align-items-center">
         <!-- Logo and Brand -->
         <div class="d-flex align-items-center">
-            <img src="./logo.jpg" alt="Logo" class="rounded-circle me-2" style="max-height: 40px;">
+            <img src="./images/logo.jpg" alt="Logo" class="rounded-circle me-2" style="max-height: 40px;">
             <a class="navbar-brand fw-bold fs-3 text-white" href="#">Infinity Learn</a>
         </div>
 
@@ -87,41 +87,11 @@
 
         <!-- Right Image (Moved Left & Bigger) -->
         <div class="col-12 col-lg-5 text-center text-lg-end fade-in-right">
-            <img src="header.jpeg" alt="Learning Illustration" class="img-fluid rounded" 
+            <img src="./images/header.jpeg" alt="Learning Illustration" class="img-fluid rounded" 
                 style="width: 80%; height: auto; padding: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transform: translateX(-15%);">
         </div>
     </div>
     </div>
-
-    <!-- Custom CSS -->
-    <style>
-    /* Initial state for fade-in effects */
-    .fade-in-left, .fade-in-right {
-        opacity: 0;
-        transform: translateX(0);
-        transition: all 1.5s ease-out;
-    }
-
-    .fade-in-left {
-        transform: translateX(-100px);
-    }
-    .fade-in-right {
-        transform: translateX(100px);
-    }
-
-    /* On page load (fade-in effect) */
-    .fade-in-left.loaded, .fade-in-right.loaded {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* For the fading effect when scrolling out */
-    .fade-out-left, .fade-out-right {
-        opacity: 0;
-        transform: translateX(100px);
-        transition: all 1.5s ease-out;
-    }
-    </style>
 
     <!-- JavaScript for Scroll and Onload Events -->
     <script>
@@ -337,7 +307,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <img src="programmer.png" alt="Learning Illustration" class="img-fluid" style="width: 60%; height: auto;">
+                    <img src="./images/programmer.png" alt="Learning Illustration" class="img-fluid" style="width: 60%; height: auto;">
                 </div>
             </div>
         </div>
@@ -364,21 +334,21 @@
         <button class="carousel-btn me-2" onclick="scrollLogos(-1)">&#9665;</button>
 
         <div id="logoCarousel">
-            <img src="foundation.png" alt="Tekkatho Foundation" class="img-fluid logo-item">
-            <img src="bird.png" alt="MEC" class="img-fluid logo-item">
-            <img src="utycc.png" alt="University" class="img-fluid logo-item">
-            <img src="child.png" alt="UNICEF" class="img-fluid logo-item">
-            <img src="university.png" alt="Strategy First University" class="img-fluid logo-item">
-            <img src="english.png" alt="Wall Street English" class="img-fluid logo-item">
-            <img src="wing.png" alt="Wing" class="img-fluid logo-item">
-            <img src="band.png" alt="Band" class="img-fluid logo-item">
-            <img src="crown.png" alt="Crown" class="img-fluid logo-item">
-            <img src="free.png" alt="Free" class="img-fluid logo-item">
-            <img src="new.png" alt="new" class="img-fluid logo-item">
-            <img src="new1.png" alt="new1" class="img-fluid logo-item">
-            <img src="new2.png" alt="new2" class="img-fluid logo-item">
-            <img src="new3.png" alt="new3" class="img-fluid logo-item">
-            <img src="new4.png" alt="new4" class="img-fluid logo-item">
+            <img src="./images/foundation.png" alt="Tekkatho Foundation" class="img-fluid logo-item">
+            <img src="./images/bird.png" alt="MEC" class="img-fluid logo-item">
+            <img src="./images/utycc.png" alt="University" class="img-fluid logo-item">
+            <img src="./images/child.png" alt="UNICEF" class="img-fluid logo-item">
+            <img src="./images/university.png" alt="Strategy First University" class="img-fluid logo-item">
+            <img src="./images/english.png" alt="Wall Street English" class="img-fluid logo-item">
+            <img src="./images/wing.png" alt="Wing" class="img-fluid logo-item">
+            <img src="./images/band.png" alt="Band" class="img-fluid logo-item">
+            <img src="./images/crown.png" alt="Crown" class="img-fluid logo-item">
+            <img src="./images/free.png" alt="Free" class="img-fluid logo-item">
+            <img src="./images/new.png" alt="new" class="img-fluid logo-item">
+            <img src="./images/new1.png" alt="new1" class="img-fluid logo-item">
+            <img src="./images/new2.png" alt="new2" class="img-fluid logo-item">
+            <img src="./images/new3.png" alt="new3" class="img-fluid logo-item">
+            <img src="./images/new4.png" alt="new4" class="img-fluid logo-item">
         </div>
 
         <button class="carousel-btn ms-2" onclick="scrollLogos(1)">&#9655;</button>

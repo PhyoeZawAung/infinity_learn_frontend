@@ -153,4 +153,29 @@ body {
         font-size: 4vw;
     }
 }
+    /* Initial state for fade-in effects */
+    .fade-in-left, .fade-in-right {
+        opacity: 0;
+        transform: translateX(0);
+        transition: all 1.5s ease-out;
+    }
 
+    .fade-in-left {
+        transform: translateX(-100px);
+    }
+    .fade-in-right {
+        transform: translateX(100px);
+    }
+
+    /* On page load (fade-in effect) */
+    .fade-in-left.loaded, .fade-in-right.loaded {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* For the fading effect when scrolling out */
+    .fade-out-left, .fade-out-right {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 1.5s ease-out;
+    }
