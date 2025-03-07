@@ -2,415 +2,455 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard - Teacher</title>
-    <link href="../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Courses - Teacher</title>
+  <link href="../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <style>
-        .card-title{
-            font-weight: bold;
-        }
-        .star{
-            color:chocolate;
-        }
-        .btnResult{
-            display: block;
-            width: 170px;
-            font-size: 18px;
-            text-align: center;
-            padding: 10px 20px 20px 0;
-            margin: 10px auto 20px;
-            cursor: pointer;
-            overflow: hidden;
-            background: url();
-            background-color: rgb(223, 204, 204);
-            color: black;
-        }
-        .CL_container{
-            max-width: 1000px;
-            margin: auto;
-        }
-       
-        .toggle-button {
-       
-       position: absolute;
-       top: 50%;
-       transform: translateY(-50%);
-       left: unset;
-       right: 25px;
-       
-        }
-        .review-container{
-            background-color: #54595E;
-            color:aliceblue;
-        }
-        
-    </style>
-
+  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Infinity Learn</a>
-        <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="bi bi-list h4"></i></button>
-        <ul class="ms-auto navbar-nav ms-auto  me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="bi bi-person-circle h3"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Profile</a></li>
-                    <li><a class="dropdown-item" href="#!">Settings</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
-                </ul>
-            </li>
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="index.html">Infinity Learn</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+        class="bi bi-list h4"></i></button>
+    <ul class="ms-auto navbar-nav ms-auto  me-3 me-lg-4">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"><i class="bi bi-person-circle h3"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#!">Profile</a></li>
+          <li><a class="dropdown-item" href="#!">Settings</a></li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><a class="dropdown-item" href="#!">Logout</a></li>
         </ul>
-    </nav>
-    <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Menu</div>
-                        <a class="nav-link active" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
-                            Dashboard
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
-                            Courses
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
-                            Students
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
-                            Messages
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
-                            Notifications
-                        </a>
-                    </div>
-                </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Phyoe Zaw Aung
-                </div>
-            </nav>
+      </li>
+    </ul>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+          <div class="nav">
+            <div class="sb-sidenav-menu-heading">Menu</div>
+            <a class="nav-link" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
+              Dashboard
+            </a>
+            <a class="nav-link active" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
+              Courses
+            </a>
+            <a class="nav-link" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
+              Students
+            </a>
+            <a class="nav-link" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
+              Messages
+            </a>
+            <a class="nav-link" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
+              Notifications
+            </a>
+          </div>
         </div>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <!-- Write your content here -->
-                    <h1 class="mt-4">Dashboard</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-
-
-                    
-
-                    <div class="CL_container">
-
-                        <nav class="navbar bg-body-tertiary mb-5" style="background-color: burlywood;">
-                            <div class="container-fluid">
-                              <a class="navbar-brand">Courses</a>
-                              <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <div class="toggle-button d-inline-flex position-absolute">
-                                    <i class="bi bi-search"></i>
-                                </div>
-                                
-                              </form>
-                            </div>
-                        </nav>
-                        <div class="container ms-5">
-                        <div class="row row-cols-1 row-cols-md-3 g-4 container me-5 mb-5">
-                            <div class="col" style="width: 18rem;">
-                              <div class="card h-100">
-                                <img src="https://miro.medium.com/v2/resize:fit:1200/1*V-Jp13LvtVc2IiY2fp4qYw.jpeg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h4 class="card-title">Web Development</h4>
-                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                  
-                                  
-                                </div>
-                                <div class="card-footer">
-                                    <div class="d-flex flex-row">
-                                        <a href="#" class="btn btn-primary me-4">Read More</a>
-                                        <p class="card-text"><small class="text-body-secondary">Jan 18,2023</small></p>
-                                    </div>
-                                </div>
-                                
-                              </div>
-                            </div>
-                            <div class="col" style="width: 18rem;">
-                              <div class="card h-100">
-                                <img src="https://blogs.debutinfotech.com/wp-content/uploads/2024/04/Artificial-Intelligence-Development.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h4 class="card-title">Artificial Intelligence Development</h4>
-                                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                  
-                                </div>
-                                <div class="card-footer">
-                                    <div class="d-flex flex-row">
-                                        <a href="#" class="btn btn-primary me-4">Read More</a>
-                                        <p class="card-text"><small class="text-body-secondary">Jan 18,2023</small></p>
-                                    </div>
-                                </div>
-                                
-                              </div>
-                            </div>
-
-                            <div class="col" style="width: 18rem;">
-                                <div class="card h-100">
-                                  <img src="https://miro.medium.com/v2/resize:fit:1200/1*J38nYZU7gzu-4lQmtjlSUw.jpeg" class="card-img-top" alt="...">
-                                  <div class="card-body" style="background-color:rgb(145, 219, 219);">
-                                    <h4 class="card-title">Data Sturcture</h4>
-                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                                        This card has supporting to additional content........
-                                    </p>
-                                    <span>3.5
-                                      <i class="bi bi-star-fill star"></i>
-                                      <i class="bi bi-star-fill star"></i>
-                                      <i class="bi bi-star-fill star"></i>
-                              
-                                      <i class="bi bi-star-half star me-4"></i></span>
-                                      <p>14,000students</p>
-                                    
-                                  </div>
-                                  <div class="card-footer">
-                                    <div class="d-flex flex-row">
-                                        <a href="#" class="btn btn-primary me-4">Read More</a>
-                                        <p class="card-text"><small class="text-body-secondary">Jan 18,2023</small></p>
-                                    </div>
-                                </div>
-                                  
-                                </div>
-                              </div>
-                        
-                        </div>
-
-                    </div>
-
-
-                    <div class="container ms-5">
-                        <div class="row row-cols-1 row-cols-md-3 g-4 container me-5 mb-5">
-                            <div class="col" style="width: 18rem;">
-                              <div class="card h-100">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc5n-Cxa04HP5rC2-lXWJptpfXWPQchvn8ZQ&s" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h4 class="card-title">Cyber Security</h4>
-                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                 
-                                  
-                                </div>
-                                <div class="card-footer">
-                                    <div class="d-flex flex-row">
-                                        <a href="#" class="btn btn-primary me-4">Read More</a>
-                                        <p class="card-text"><small class="text-body-secondary">Jan 18,2023</small></p>
-                                    </div>
-                                </div>
-                                
-                              </div>
-                            </div>
-                            <div class="col" style="width: 18rem;">
-                              <div class="card h-100">
-                                <img src="https://jbstechinfo.com/wp-content/uploads/2023/08/JavaScript-Symbol.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h4 class="card-title">Introduction to Javascript</h4>
-                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>
-                                  
-                                </div>
-                                <div class="card-footer">
-                                    <div class="d-flex flex-row">
-                                        <a href="#" class="btn btn-primary me-4">Read More</a>
-                                        <p class="card-text"><small class="text-body-secondary">Jan 18,2023</small></p>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="col" style="width: 18rem;">
-                                <div class="card h-100">
-                                  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20241216150103175699/CSharp-Tutorial.png" class="card-img-top" alt="...">
-                                  <div class="card-body" style="background-color:rgb(145, 219, 219);">
-                                    <h4 class="card-title">Introduction to C# Programming</h4>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                                    <span>4.5
-                                      <i class="bi bi-star-fill star"></i>
-                                      <i class="bi bi-star-fill star"></i>
-                                      <i class="bi bi-star-fill star"></i>
-                                      <i class="bi bi-star-fill star "></i>
-                                      <i class="bi bi-star-half star me-4"></i></span>
-                                      <p>14,200students</p>
-                                  </div>
-                                  <div class="card-footer">
-                                    <div class="d-flex flex-row">
-                                        <a href="#" class="btn btn-primary me-4">Read More</a>
-                                        <p class="card-text"><small class="text-body-secondary">Jan 18,2023</small></p>
-                                        
-                                    </div>
-                                </div>
-                                  
-                                </div>
-                              </div>
-                        
-                        </div>
-
-                    </div>
-                    <a href="#" onclick="showMore();" class="btnResult">See more <i class="ms-3 bi bi-arrow-right-circle-fill"></i></a>
-                    </div>
-                    
-
-                
-                    
-
-                </div>
-            </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="review-container mt-4">
-                    <div class="change-color p-5">
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-3">
-                                    <h3 >Infinity Learn</h3>
-                                </div>
-                             
-                              <div class="col-3">
-                                <h4>Menu</h4>
-                              </div>
-                              <div class="col-3">
-                                <h4>Categories</h4>
-                              </div>
-                              <div class="col-3">
-                                <h4>Social Medias</h4>
-                              </div>
-                            </div>
-                        </div>
-        
-        
-        
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-3">
-                                   
-                                </div>
-                             
-                              <div class="col-3">
-                                <p>Home</p>
-                              </div>
-                              <div class="col-3">
-                               <p>Web Development</p>
-                              </div>
-                              <div class="col-3">
-                                <p>Facebook</p>
-                              </div>
-                            </div>
-                        </div>
-        
-        
-        
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-3">
-                                   
-                                </div>
-                             
-                              <div class="col-3">
-                                <p>Course</p>
-                              </div>
-                              <div class="col-3">
-                               <p>Software Development</p>
-                              </div>
-                              <div class="col-3">
-                                <p>Linkedin</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-3">
-                                   
-                                </div>
-                             
-                              <div class="col-3">
-                                <p>Instructors</p>
-                              </div>
-                              <div class="col-3">
-                               <p>Data Science</p>
-                              </div>
-                              <div class="col-3">
-                                <p>Github</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-3">
-                                   
-                                </div>
-                             
-                              <div class="col-3">
-                                <p>About Us</p>
-                              </div>
-                              <div class="col-3">
-                               <p>Machine Learning</p>
-                              </div>
-                              <div class="col-3">
-                                <p>Machine Learning</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-3">
-                                   
-                                </div>
-                             
-                              <div class="col-3">
-                                <p>Contact Us</p>
-                              </div>
-                              <div class="col-3">
-                               <p>Artificial Intelligence</p>
-                              </div>
-                              <div class="col-3">
-                                <p>Artificial Intelligence</p>
-                              </div>
-                            </div>
-                        </div>
-                        <p class="text-center pt-5">Copyright &copy; Infinity Learn Myanmar Co.Ltd. All right reserved</p>
-        
-                    </div>
-        
-                </div>
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Infinity Learn 2025</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+        <div class="sb-sidenav-footer">
+          <div class="small">Logged in as:</div>
+          Phyoe Zaw Aung
         </div>
+      </nav>
     </div>
-    <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <!-- Write your content here -->
+
+
+          <div class="container">
+            <h1 class="mt-4">Courses</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Courses</li>
+              <li class="breadcrumb-item active">List</li>
+            </ol>
+
+            <!-- search input -->
+            <div class="mb-3">
+              <form action="#" class="form-inline">
+                <div class="input-group mb-4">
+                  <input type="search" name="query" class="form-control" placeholder="Course title" aria-label="title"
+                    aria-describedby="button-addon2" />
+
+                  <div class="input-group-text">
+                    <label for="course-type" class="form-check-label me-2">Reviewed<span class="badge text-bg-success ms-1">5</span></label>
+                    <input name="course-type" class="form-check-input mt-0" type="radio" value="1"
+                      aria-label="Checkbox for following text input">
+                  </div>
+                  <div class="input-group-text">
+                    <label for="course-type" class="form-check-label me-2">Under Reviewed<span class="badge text-bg-warning ms-1">5</span></label>
+                    <input name="course-type" class="form-check-input mt-0" type="radio" value="2"
+                      aria-label="Checkbox for following text input">
+                  </div>
+                  <div class="input-group-text">
+                    <label for="course-type" class="form-check-label me-2">Draft<span class="badge text-bg-secondary ms-1">5</span></label>
+                    <input name="course-type" class="form-check-input mt-0" type="radio" value="3"
+                      aria-label="Checkbox for following text input">
+                  </div>
+                  <button class="btn btn-primary" type="submit" id="button-addon2"><i
+                      class="me-2 bi bi-search"></i>Search</button>
+                </div>
+              </form>
+            </div>       
+            <!-- Course One -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course one</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row mb-2">
+                  <div class="me-2">
+                    <span class="align-middle badge text-bg-success">reviewed</span>
+                  </div>
+                  <div class="me-2">
+                    <span class="me-2">4.5</span>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-half star"></i>
+                  </div>
+                  <span>14,000 students</span>
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Course Two -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course two</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row">
+                  <div class="me-2 mb-2">
+                    <span class="align-middle badge text-bg-warning">under review</span>
+                  </div>
+                  <!-- <div class="me-2">
+                              <span class="me-2">4.5</span>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                            </div>
+                            <p>14,000 students</p> -->
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Course Three -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course three</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row">
+                  <div class="me-2 mb-2">
+                    <span class="align-middle badge text-bg-secondary">draft</span>
+                  </div>
+                  <!-- <div class="me-2">
+                              <span class="me-2">4.5</span>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                            </div>
+                            <p>14,000 students</p> -->
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Course Four -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course four</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row mb-2">
+                  <div class="me-2">
+                    <span class="align-middle badge text-bg-success">reviewed</span>
+                  </div>
+                  <div class="me-2">
+                    <span class="me-2">4.5</span>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-half star"></i>
+                  </div>
+                  <span>14,000 students</span>
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+            <!-- Course Five -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course Five</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row mb-2">
+                  <div class="me-2">
+                    <span class="align-middle badge text-bg-success">reviewed</span>
+                  </div>
+                  <div class="me-2">
+                    <span class="me-2">4.5</span>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-half star"></i>
+                  </div>
+                  <span>14,000 students</span>
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Course Six -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course Six</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row">
+                  <div class="me-2 mb-2">
+                    <span class="align-middle badge text-bg-warning">under review</span>
+                  </div>
+                  <!-- <div class="me-2">
+                              <span class="me-2">4.5</span>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                            </div>
+                            <p>14,000 students</p> -->
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Course Seven -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course Seven</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row">
+                  <div class="me-2 mb-2">
+                    <span class="align-middle badge text-bg-secondary">draft</span>
+                  </div>
+                  <!-- <div class="me-2">
+                              <span class="me-2">4.5</span>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                            </div>
+                            <p>14,000 students</p> -->
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Course Eight -->
+            <div class="row">
+              <div class="col-md-5">
+                <a href="#">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="https://placehold.co/500x300" alt="">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <h3>Course Eight</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                  laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                  perspiciatis atque eveniet unde.</p>
+                <div class="d-flex flex-row mb-2">
+                  <div class="me-2">
+                    <span class="align-middle badge text-bg-success">reviewed</span>
+                  </div>
+                  <div class="me-2">
+                    <span class="me-2">4.5</span>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-fill star"></i>
+                    <i class="bi bi-star-half star"></i>
+                  </div>
+                  <span>14,000 students</span>
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <i class="bi bi-file-earmark-play me-2 h5"></i>50 lesson videos
+                  </div>
+                  <div>
+                    <i class="bi bi-file-earmark-text me-2 h5"></i>50 assignments
+                  </div>
+                </div>
+                <a class="btn btn-primary" href="#">View Course</a>
+              </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+          </div>
+      </main>
+      <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; Infinity Learn 2025</div>
+            <div>
+              <a href="#">Privacy Policy</a>
+              &middot;
+              <a href="#">Terms &amp; Conditions</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>
