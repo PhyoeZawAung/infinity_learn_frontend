@@ -7,86 +7,7 @@
 
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        .course-section {
-            background-color: #4A4A4A;
-            color: white;
-            padding: 50px 20px;
-            border-radius: 8px;
-        }
-        .course-content {
-            background-color: pink;
-           
-            padding: 50px 20px;
-            border-radius: 8px;
-        }
-        .course-description {
-            background-color: gray;
-            color: white;
-            padding: 50px 20px;
-            border-radius: 8px;
-        }
-
-        .course-detail {
-            background-color:ghostwhite;
-        
-            padding: 50px 20px;
-            border-radius: 8px;
-        }
-
-        .rating {
-            color: orange;
-        }
-
-        .enroll-btn {
-            background-color: #55c6f7;
-            color: white;
-            font-weight: bold;
-        }
-
-        table {
-            margin-top: 20px;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .accordion-button {
-            background-color: #f8f9fa;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-button:not(.collapsed) {
-            background-color: #e9ecef;
-        }
-
-        .text-muted {
-            font-size: 14px;
-        }
-
-        #details {
-            display: none
-        }
-    </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#more').click(function () {
-                $('#details').toggle();
-            });
-        });
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -152,9 +73,8 @@
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Courses/course detail</li>
                     </ol>
-
                     <body>
-                        <div class="container mt-5">
+                        <div class="container">
                             <div class="course-section p-4">
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
@@ -165,57 +85,125 @@
                                             Perfect for those looking to start a career in data science.</p>
                                         <div>
                                             <span class="badge bg-success">best review</span>
-                                            4.7 <span class="rating">⭐️⭐️⭐️⭐️⭐️ </span>
+                                            4.7 <span class="rating"><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
                                             <span>1,420,288 students</span>
-                                        </div>
+                                        </div><br>
                                         <p>Created by <a href="#" class="text-info">Dr. Phyoe Zaw Aung</a></p>
-                                        <p>📅 Last updated 2/2025 🌍 English</p>
-                                        <button class="btn enroll-btn">Edit Course</button>
+                                        <i class="bi bi-calendar-check"> Last updated 2/2025</i> <i
+                                            class="bi bi-globe"></i> English</p>
+                                        <button>Edit Course</button>
                                     </div>
                                     <div class="col-md-2 text-center">
-                                        <img src="programming.jpg" alt="" class="img-fluid rounded">
+                                        <img src="Blogging.png" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="container mt-5">
+                        <div class="container">
                             <div class="course-detail p-4">
-                                <h2>What you'll Learn</h2>
-                                <div class="col-sm-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p class="card-text">
-                                                <i class="bi bi-dot">Business & Markteing</i><br>
-                                                <i class="bi bi-dot">Technology & Programming</i><br>
-                                                <i class="bi bi-dot">Design & Creativity </i> </i><br>
-                                                <i class="bi bi-dot">Personal Development & Soft Skills </i><br>
-                                                <i class="bi bi-dot">Health & Wellness</i><br>
-                                                <i class="bi bi-dot">Finance & Investing</i><br>
-                                                <i class="bi bi-dot">Language & Communication </i> </i>
-                                            </p>
+                                <div class="row align-items-center">
+                                    <h2>What you'll Learn</h2>
+                                    <div class="col-sm-12">
+                                        <div class="container text-left">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <i class="bi bi-dot">Business & Markteing</i><br>
+                                                    <i class="bi bi-dot">Technology & Programming</i><br>
+                                                    <i class="bi bi-dot">Design & Creativity </i> </i><br>
+                                                </div>
+                                                <div class="col-6">
+                                                    <i class="bi bi-dot">Personal Development & Soft Skills </i><br>
+                                                    <i class="bi bi-dot">Health & Wellness</i><br>
+                                                    <i class="bi bi-dot">Finance & Investing</i><br>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <script
-                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-                        </script>
                     </body>
-
-
                     </head>
+                    <main class="container">
+                        <div class="course-description p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <h3>Description</h3>
+                                    <p>Welcome to our <strong>Infinity Learn</strong>, where knowledge meets innovation!
+                                        Our
+                                        platform is designed to empower learners of all backgrounds by providing
+                                        high-quality, flexible, and industry-relevant courses. Whether you're looking to
+                                        enhance your skills, start a new career, or gain expertise in emerging
+                                        technologies, we offer a diverse range of courses tailored to meet the evolving
+                                        demands of various industries.
 
-                    <main class="container mt-5">
+                                        Each course is carefully structured to provide an immersive learning experience
+                                        through interactive lessons, hands-on projects, real-world case studies, and
+                                        expert mentorship. With self-paced and instructor-led options available, you can
+                                        learn at your convenience while staying engaged with a community of like-minded
+                                        learners and industry professionals.</p>
+                                    <a href="#" id="more" class="text-decoration-none">Show more</a>
+                                    <div id="details">
+                                        Course Structure & Learning Approach
 
+                                        Our courses follow a structured curriculum designed to ensure a seamless
+                                        learning experience. Each course consists of multiple modules, carefully crafted
+                                        to build your knowledge progressively. Here’s what you can expect:
+
+                                        1. Engaging & Interactive Learning Content
+
+                                        High-Quality Video Lectures – Professionally recorded lessons by industry
+                                        experts and educators.
+
+                                        Downloadable Resources – Access to course materials, templates, guides, and
+                                        eBooks to reinforce learning.
+
+                                        Quizzes & Assessments – Regular assessments to test your understanding and track
+                                        progress.
+
+
+                                        2. Hands-on Projects & Real-World Applications
+
+                                        Practical projects that simulate real-world scenarios to help you apply
+                                        theoretical knowledge.
+
+                                        Industry-relevant case studies and problem-solving exercises to enhance critical
+                                        thinking.
+
+                                        Portfolio-building exercises to showcase your skills to potential employers.
+
+
+                                        3. Live Sessions & Mentorship Support
+
+                                        Interactive live webinars and Q&A sessions with experts.
+
+                                        Dedicated discussion forums and peer collaboration opportunities.
+
+                                        One-on-one mentorship and career guidance to help you navigate job
+                                        opportunities.
+
+
+                                        4. Certification & Career Support
+
+                                        Earn a globally recognized certificate upon successful course completion.
+
+                                        Resume-building and job placement assistance for career advancement.
+
+                                        Access to an exclusive alumni network and professional growth opportunities.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <main class="container">
                         <div class="course-content p-4">
                             <div class="row align-items-center">
                                 <div class="col-md-12">
-                                    <h3 class="mb-4">Course Content</h3>
-
+                                    <h3>Course Content</h3>
                                     <button class="btn btn-success mb-3" id="expend_all">expend all</button>
                                     <button class="btn btn-danger mb-3" id="close_all">close all</button>
-
                                     <div class="accordion" id="accordionPanelsStayOpenExample">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
@@ -248,7 +236,6 @@
                                                     </p>
                                                     <h5 class="card-title">Course:Entrepreneurship & Startup
                                                         Growth</h5>
-
                                                     <p>
                                                         Learn how to start, fund, and grow a successful
                                                         business. This course covers
@@ -264,8 +251,6 @@
                                                         <i class="bi bi-dot">Funding & Investor Pitching</i><br>
                                                         <i class="bi bi-dot">Growth Hacking & Scaling</i><br>
                                                     </p>
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -276,7 +261,6 @@
                                                     data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                                                     aria-controls="panelsStayOpen-collapseTwo">
                                                     Technology & Programming
-
                                                 </button>
                                             </h2>
                                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
@@ -317,7 +301,6 @@
                                                         <i class="bi bi-dot">Incident Response & Risk
                                                             Management</i><br>
                                                     </p>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -334,7 +317,6 @@
                                                 <div class="accordion-body">
                                                     <h5>Course:Graphic Design with
                                                         Photoshop & Illustrator</h5>
-
                                                     <p>
                                                         Learn graphic design principles, typography,
                                                         branding, and Adobe Photoshop &
@@ -352,7 +334,6 @@
                                                     </p>
                                                     <h5>Course:UX/UI Design for Web &
                                                         Mobile</h5>
-
                                                     <p>
                                                         Understand user experience (UX) and user interface
                                                         (UI) design principles
@@ -368,8 +349,6 @@
                                                             XD)</i><br>
                                                         <i class="bi bi-dot">Testing & User Feedback</i><br>
                                                     </p>
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -378,7 +357,6 @@
                             </div>
                         </div>
                     </main>
-
                     <script>
 
                         // expend all button dom element
@@ -449,80 +427,6 @@
                         }
                     </script>
 
-                    <main class="container mt-5">
-
-                        <div class="course-description p-4">
-                            <div class="row align-items-center">
-                                <div class="col-md-12">
-                                    <h3 class="mb-4">Description</h3>
-                                    <p>Welcome to our <strong>Infinity Learn</strong>, where knowledge meets innovation!
-                                        Our
-                                        platform is designed to empower learners of all backgrounds by providing
-                                        high-quality, flexible, and industry-relevant courses. Whether you're looking to
-                                        enhance your skills, start a new career, or gain expertise in emerging
-                                        technologies, we offer a diverse range of courses tailored to meet the evolving
-                                        demands of various industries.
-
-                                        Each course is carefully structured to provide an immersive learning experience
-                                        through interactive lessons, hands-on projects, real-world case studies, and
-                                        expert mentorship. With self-paced and instructor-led options available, you can
-                                        learn at your convenience while staying engaged with a community of like-minded
-                                        learners and industry professionals.</p>
-                                    <a href="#" id="more">Show more</a>
-                                    <div id="details">
-                                        Course Structure & Learning Approach
-
-                                        Our courses follow a structured curriculum designed to ensure a seamless
-                                        learning experience. Each course consists of multiple modules, carefully crafted
-                                        to build your knowledge progressively. Here’s what you can expect:
-
-                                        1. Engaging & Interactive Learning Content
-
-                                        High-Quality Video Lectures – Professionally recorded lessons by industry
-                                        experts and educators.
-
-                                        Downloadable Resources – Access to course materials, templates, guides, and
-                                        eBooks to reinforce learning.
-
-                                        Quizzes & Assessments – Regular assessments to test your understanding and track
-                                        progress.
-
-
-                                        2. Hands-on Projects & Real-World Applications
-
-                                        Practical projects that simulate real-world scenarios to help you apply
-                                        theoretical knowledge.
-
-                                        Industry-relevant case studies and problem-solving exercises to enhance critical
-                                        thinking.
-
-                                        Portfolio-building exercises to showcase your skills to potential employers.
-
-
-                                        3. Live Sessions & Mentorship Support
-
-                                        Interactive live webinars and Q&A sessions with experts.
-
-                                        Dedicated discussion forums and peer collaboration opportunities.
-
-                                        One-on-one mentorship and career guidance to help you navigate job
-                                        opportunities.
-
-
-                                        4. Certification & Career Support
-
-                                        Earn a globally recognized certificate upon successful course completion.
-
-                                        Resume-building and job placement assistance for career advancement.
-
-                                        Access to an exclusive alumni network and professional growth opportunities.
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
                     <footer class="py-4 bg-light mt-auto">
                         <div class="container-fluid px-4">
                             <div class="d-flex align-items-center justify-content-between small">
