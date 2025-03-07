@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searchable Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .dataTables_wrapper {
+            color: black;
+        }
+        .custom-link {
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #2575fc;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .custom-link i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="review_origin.html" class="custom-link">
+            <i class="bi bi-house"></i> Review <i class="bi bi-chevron-double-right"></i>
+        </a>
+        <table id="employeeTable" class="table table-striped display">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Airi Satou</td><td>Accountant</td><td>Tokyo</td><td>33</td><td>11/28/2008</td></tr>
+                <tr><td>Angelica Ramos</td><td>Chief Executive Officer (CEO)</td><td>London</td><td>47</td><td>10/9/2009</td></tr>
+                <tr><td>Ashton Cox</td><td>Junior Technical Author</td><td>San Francisco</td><td>66</td><td>1/12/2009</td></tr>
+                <tr><td>Bradley Greer</td><td>Software Engineer</td><td>London</td><td>41</td><td>10/13/2012</td></tr>
+                <tr><td>Brenden Wagner</td><td>Software Engineer</td><td>San Francisco</td><td>28</td><td>6/7/2011</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#employeeTable').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "info": true
+            });
+        });
+    </script>
+</body>
+</html>

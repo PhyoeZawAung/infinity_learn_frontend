@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Static Navigation - SB Admin</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+        <style>
+            body {
+                background: linear-gradient(to right, #6a11cb, #2575fc);
+                color: white;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
+            .custom-link {
+                padding: 10px;
+                border-radius: 5px;
+                color: #2575fc;
+                font-weight: bold;
+                text-decoration: none;
+                display: inline-block;
+            }
+            .container-fluid {
+                background-color: #edf8ee;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            .review {
+                margin-bottom: 20px;
+                font-size: 18px;
+                color: #6c757d;
+            }
+            .review-text {
+                text-decoration: none;
+                color: #007bff;
+                font-weight: bold;
+            }
+            .review-text:hover {
+                color: #0056b3;
+            }
+            .dropdown-menu {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+            .dropdown-item {
+                color: #4c4f5c;
+                transition: 0.3s;
+            }
+            .dropdown-item:hover {
+                color: #007bff;
+                background-color: #e9ecef;
+            }
+            .table {
+                border-radius: 12px;
+                background-color:  #063a71;
+                overflow: hidden;
+            }
+            .table th {
+                background-color: #063a71;
+                color: white;
+                text-align: center;
+            }
+            .table td {
+                text-align: center;
+            }
+            .table td:nth-child(2),
+            .table td:nth-child(3),
+            .table td:nth-child(4),
+            .table td:nth-child(5) {
+                text-align: left;
+            }
+            .table td button {
+                margin: 0;
+                padding: 8px 12px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+            .table td button:hover {
+                background-color: #0056b3;
+            }
+            .table-striped tbody tr:nth-child(odd) {
+                background-color: #f8f9fa;
+            }
+            .table-responsive {
+                overflow-x: auto;
+            }
+            #employeeTable {
+                width: 100%; /* Responsive width */
+                max-width: 1000px; /* Set a reasonable max-width */
+                margin: auto;
+                table-layout: fixed;
+            }
+            #employeeTable th, #employeeTable td {
+                word-wrap: break-word;
+                white-space: normal;
+                text-align: center;
+            }
+            .row.mb-3 {
+                margin-bottom: 30px;
+            }
+            .dropdown-toggle {
+                background-color: #007bff;
+                color: white;
+                border-radius: 8px;
+            }
+            .dropdown-toggle:hover {
+                background-color: #0056b3;
+            }
+        </style>
+</head>
+    </head>
+    <body>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <a class="nav-link" href="review_origin.html">
+                                <div class="sb-nav-link-icon"><i class="bi bi-yelp"></i></div>
+                                Review
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <div class="review">
+                            <h4>
+                                <a class="review-text" href="index.html">
+                                    <i class="bi bi-house"></i> 
+                                </a> 
+                                <i class="bi bi-chevron-double-right"></i>
+                                <a href="review_origin.html" class="review-text">Review</a>
+                                <i id="chevronIcon" class="bi bi-chevron-double-right"></i>
+                            </h4>
+                        </div>
+                        <!-- Make table very large width using Bootstrap grid system -->
+                        <div class="row mb-3">
+                            <!-- Sort and Search bar above the table -->
+                            <div class="col-6 d-flex">
+                                <div class="col-6 d-flex">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Search..." />
+                                </div>
+                                <!-- Sort Dropdown -->
+
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Sort By
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                                        <li><a class="dropdown-item" href="#" onclick="sortTable(0)">id</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="sortTable(1)">reviewer_name</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="sortTable(2)">reviewer_email</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="sortTable(3)">review_course</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="sortTable(4)">review_description</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="sortTable(5)">Date</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="employeeTable" class="table table-striped display">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>reviewer_name</th>
+                                        <th>reviewer_email</th>
+                                        <th>review_course</th>
+                                        <th>review_description</th>
+                                        <th>Date</th> 
+                                        <th>view_course</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Airi Satou</td>
+                                        <td>airi.satou@example.com</td>
+                                        <td>Math</td>
+                                        <td>Experienced and highly skilled in teaching complex math concepts.</td>
+                                        <td>11/28/2008</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Angelica Ramos</td>
+                                        <td>angelica.ramos@example.com</td>
+                                        <td>Science</td><td>Excellent at making science engaging and accessible.</td>
+                                        <td>10/9/2008</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Ashton Cox</td>
+                                        <td>ashton.cox@example.com</td>
+                                        <td>History</td>
+                                        <td>Deep knowledge of world history with great storytelling skills.</td>
+                                        <td>1/1/2008</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Bradley Greer</td>
+                                        <td>bradley.greer@example.com</td>
+                                        <td>Literature</td>
+                                        <td>Passionate about literature and a great communicator in the classroom.</td>
+                                        <td>10/1/2008</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Brenden Wagner</td>
+                                        <td>brenden.wagner@example.com</td>
+                                        <td>Physics</td>
+                                        <td>Clear explanations and a natural ability to simplify difficult concepts.</td>
+                                        <td>6/7/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Brielle Williamson</td>
+                                        <td>brielle.williamson@example.com</td>
+                                        <td>Biology</td>
+                                        <td>Strong background in biology with a focus on environmental science.</td>
+                                        <td>12/2/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Bruno Nash</td>
+                                        <td>bruno.nash@example.com</td>
+                                        <td>Chemistry</td>
+                                        <td>Expert in chemical reactions and laboratory safety protocols.</td>
+                                        <td>5/3/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Caesar Vance</td>
+                                        <td>caesar.vance@example.com</td>
+                                        <td>Math</td><td>Highly proficient in calculus and algebra.</td>
+                                        <td>12/12/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Cara Stevens</td>
+                                        <td>cara.stevens@example.com</td>
+                                        <td>Psychology</td>
+                                        <td>Skilled in understanding human behavior and motivational psychology.</td>
+                                        <td>12/6/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Cedric Kelly</td>
+                                        <td>cedric.kelly@example.com</td>
+                                        <td>Geography</td>
+                                        <td>Knows geography inside and out, with a passion for cartography.</td>
+                                        <td>3/29/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Brielle Williamson</td>
+                                        <td>brielle.williamson@example.com</td>
+                                        <td>Biology</td>
+                                        <td>Strong background in biology with a focus on environmental science.</td>
+                                        <td>12/2/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Bruno Nash</td>
+                                        <td>bruno.nash@example.com</td>
+                                        <td>Chemistry</td>
+                                        <td>Expert in chemical reactions and laboratory safety protocols.</td>
+                                        <td>5/3/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Caesar Vance</td>
+                                        <td>caesar.vance@example.com</td>
+                                        <td>Math</td><td>Highly proficient in calculus and algebra.</td>
+                                        <td>12/12/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Cara Stevens</td>
+                                        <td>cara.stevens@example.com</td>
+                                        <td>Psychology</td>
+                                        <td>Skilled in understanding human behavior and motivational psychology.</td>
+                                        <td>12/6/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Cedric Kelly</td>
+                                        <td>cedric.kelly@example.com</td>
+                                        <td>Geography</td>
+                                        <td>Knows geography inside and out, with a passion for cartography.</td>
+                                        <td>3/29/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Airi Satou</td>
+                                        <td>airi.satou@example.com</td>
+                                        <td>Math</td>
+                                        <td>Experienced and highly skilled in teaching complex math concepts.</td>
+                                        <td>11/28/2008</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>Angelica Ramos</td>
+                                        <td>angelica.ramos@example.com</td>
+                                        <td>Science</td><td>Excellent at making science engaging and accessible.</td>
+                                        <td>10/9/2009</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>Ashton Cox</td>
+                                        <td>ashton.cox@example.com</td>
+                                        <td>History</td>
+                                        <td>Deep knowledge of world history with great storytelling skills.</td>
+                                        <td>1/12/2009</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>Bradley Greer</td>
+                                        <td>bradley.greer@example.com</td>
+                                        <td>Literature</td>
+                                        <td>Passionate about literature and a great communicator in the classroom.</td>
+                                        <td>10/13/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>Brenden Wagner</td>
+                                        <td>brenden.wagner@example.com</td>
+                                        <td>Physics</td>
+                                        <td>Clear explanations and a natural ability to simplify difficult concepts.</td>
+                                        <td>6/7/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>21</td>
+                                        <td>Airi Satou</td>
+                                        <td>airi.satou@example.com</td>
+                                        <td>Math</td>
+                                        <td>Experienced and highly skilled in teaching complex math concepts.</td>
+                                        <td>11/28/2008</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>22</td>
+                                        <td>Angelica Ramos</td>
+                                        <td>angelica.ramos@example.com</td>
+                                        <td>Science</td><td>Excellent at making science engaging and accessible.</td>
+                                        <td>10/9/2009</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>23</td>
+                                        <td>Ashton Cox</td>
+                                        <td>ashton.cox@example.com</td>
+                                        <td>History</td>
+                                        <td>Deep knowledge of world history with great storytelling skills.</td>
+                                        <td>1/12/2009</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>24</td>
+                                        <td>Bradley Greer</td>
+                                        <td>bradley.greer@example.com</td>
+                                        <td>Literature</td>
+                                        <td>Passionate about literature and a great communicator in the classroom.</td>
+                                        <td>10/13/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>25</td>
+                                        <td>Brenden Wagner</td>
+                                        <td>brenden.wagner@example.com</td>
+                                        <td>Physics</td>
+                                        <td>Clear explanations and a natural ability to simplify difficult concepts.</td>
+                                        <td>6/7/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>26</td>
+                                        <td>Brielle Williamson</td>
+                                        <td>brielle.williamson@example.com</td>
+                                        <td>Biology</td>
+                                        <td>Strong background in biology with a focus on environmental science.</td>
+                                        <td>12/2/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>27</td>
+                                        <td>Bruno Nash</td>
+                                        <td>bruno.nash@example.com</td>
+                                        <td>Chemistry</td>
+                                        <td>Expert in chemical reactions and laboratory safety protocols.</td>
+                                        <td>5/3/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>28</td>
+                                        <td>Caesar Vance</td>
+                                        <td>caesar.vance@example.com</td>
+                                        <td>Math</td><td>Highly proficient in calculus and algebra.</td>
+                                        <td>12/12/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>29</td>
+                                        <td>Cara Stevens</td>
+                                        <td>cara.stevens@example.com</td>
+                                        <td>Psychology</td>
+                                        <td>Skilled in understanding human behavior and motivational psychology.</td>
+                                        <td>12/6/2011</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>30</td>
+                                        <td>Cedric Kelly</td>
+                                        <td>cedric.kelly@example.com</td>
+                                        <td>Geography</td>
+                                        <td>Knows geography inside and out, with a passion for cartography.</td>
+                                        <td>3/29/2012</td>
+                                        <td><a href="course_details.html?id=1" class="btn btn-primary">View Course</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>                
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                var table = $('#employeeTable').DataTable({
+                                    "paging": true,
+                                    "searching": true,
+                                    "ordering": true,
+                                    "info": true,
+                                    "columnDefs": [
+                                        {
+                                            "targets": [5], // Date column index
+                                            "type": "date" // Specify that the Date column should be treated as a date
+                                        }
+                                    ]
+                                });
+                
+                                // Handle the sorting via dropdown
+                                window.sortTable = function(colIndex) {
+                                    table.order([colIndex, 'asc']).draw();
+                                }
+                
+                                // Handle the search functionality
+                                $('#searchInput').on('keyup', function() {
+                                    table.search(this.value).draw();
+                                });
+                            });
+                        </script>
+                    </div>
+                </main>
+            </div>          
+    </body>
+</html>
