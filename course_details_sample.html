@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            margin-top: 30px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-back {
+            background-color: #007bff;
+            color: white;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Course and Reviewer Details</h3>
+
+        <div id="reviewerDetails" class="card">
+            <div class="card-header">
+                <h5>Reviewer Profile</h5>
+            </div>
+            <div class="card-body">
+                <p id="reviewerName">Name: John Doe</p>
+                <p id="reviewerEmail">Email: johndoe@example.com</p>
+            </div>
+        </div>
+
+        <div id="courseDetails" class="card">
+            <div class="card-header">
+                <h5>Course Review</h5>
+            </div>
+            <div class="card-body">
+                <p id="courseName">Course: Mathematics</p>
+                <p id="courseReview">Review: This course is great for understanding complex concepts.</p>
+                <p id="courseDate">Review Date: 01/12/2022</p>
+            </div>
+        </div>
+
+        <div id="courseDetails" class="card">
+            <div class="card-header">
+                <h5>Course Review</h5>
+            </div>
+            <div class="card-body">
+                <p id="courseName">Course: Mathematics</p>
+                <p id="courseReview">Review: This course is great for understanding complex concepts.</p>
+                <p id="courseDate">Review Date: 01/12/2022</p>
+            </div>
+        </div>
+
+        <a href="review_origin.html" class="btn btn-back">Back to Reviews</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch the ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const reviewerId = urlParams.get('id');
+
+            // Based on the reviewer ID, update the course and reviewer profile
+            const reviewerData = [
+                {
+                    id: 1,
+                    name: "Airi Satou",
+                    email: "airi.satou@example.com",
+                    course: "Math",
+                    review: "Experienced and highly skilled in teaching complex math concepts.",
+                    date: "11/28/2008"
+                },
+                {
+                    id: 2,
+                    name: "Angelica Ramos",
+                    email: "angelica.ramos@example.com",
+                    course: "Science",
+                    review: "Excellent at making science engaging and accessible.",
+                    date: "10/9/2009"
+                },
+                // Add more reviewers here
+            ];
+
+            // Find the reviewer based on the ID
+            const reviewer = reviewerData.find(rev => rev.id === parseInt(reviewerId));
+
+            if (reviewer) {
+                // Populate the page with the reviewer's data
+                $('#reviewerName').text('Name: ' + reviewer.name);
+                $('#reviewerEmail').text('Email: ' + reviewer.email);
+                $('#courseName').text('Course: ' + reviewer.course);
+                $('#courseReview').text('Review: ' + reviewer.review);
+                $('#courseDate').text('Review Date: ' + reviewer.date);
+            } else {
+                alert("Reviewer not found.");
+            }
+        });
+    </script>
+</body>
+</html>
