@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard - Teacher</title>
+    <link href="../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+        <style>
+            .custom-link {
+                padding: 10px;
+                border-radius: 5px;
+                color: #2575fc;
+                font-weight: bold;
+                text-decoration: none;
+                display: inline-block;
+            }
+            .container-fluid {
+                background-color: #edf8ee;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            .review {
+                margin-bottom: 20px;
+                font-size: 18px;
+                color: #6c757d;
+            }
+            .review-text {
+                text-decoration: none;
+                color: #007bff;
+                font-weight: bold;
+            }
+            .review-text:hover {
+                color: #0056b3;
+            }
+            .dropdown-menu {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+            .dropdown-item {
+                color: #4c4f5c;
+                transition: 0.3s;
+            }
+            .dropdown-item:hover {
+                color: #007bff;
+                background-color: #e9ecef;
+            }
+            .dropdown-toggle {
+                background-color: #007bff;
+                color: white;
+                border-radius: 8px;
+            }
+            .dropdown-toggle:hover {
+                background-color: #0056b3;
+            }
+            body {
+                background-color: #f0f4f8;
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                background-color: #ffffff;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            .card {
+                margin-top: 10px;
+            }
+            .card-header {
+                background-color: #007bff;
+                color: white;
+            }
+            .btn-back {
+                background-color: #007bff;
+                color: white;
+                margin-top: 20px;
+                border-radius: 8px;
+            }
+            .btn-back:hover {
+                background-color: red;
+            }
+            .mx-8 {
+                margin-left: 16rem !important;
+                margin-right: 16rem !important;
+            }
+
+        </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">Infinity Learn</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="bi bi-list h4"></i></button>
+        <ul class="ms-auto navbar-nav ms-auto  me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="bi bi-person-circle h3"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Profile</a></li>
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link" href="review.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-yelp"></i></div>
+                            Review
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
+                            Courses
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
+                            Students
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
+                            Messages
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
+                            Notifications
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Phyoe Zaw Aung
+                </div>
+            </nav>
+        </div>
+        <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>     
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="review">
+                        <h4>
+                            <a class="review-text" href="dashboard.html">
+                                <i class="bi bi-house"></i> 
+                            </a> 
+                            <i class="bi bi-chevron-double-right"></i>
+                            <a href="review.html" class="review-text">Review</a>
+                            <i id="chevronIcon" class="bi bi-chevron-double-right"></i>
+                            <a href="view_course.html" class="review-text">Courses</a>
+                            <i id="chevronIcon" class="bi bi-chevron-double-right"></i>
+                        </h4>
+                    </div>
+                    <h3>Course and Reviewer Details</h3>
+            
+                    <div id="reviewerDetails" class="card mt-3">
+                        <div class="card-header text-center"> <!-- Centered Heading -->
+                            <h5>Reviewer Profile</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <img id="reviewerImage" src="boy.png" class="img-fluid rounded-circle mb-3" alt="Reviewer Image" width="100" height="100">
+                            <p id="reviewerName">Name: John Doe</p>
+                            <p id="reviewerEmail">Email: johndoe@example.com</p>
+                        </div>
+                    </div>
+                
+                    <div id="courseDetails" class="card mt-3">
+                        <div class="card-header text-center">
+                            <h5>Course Review</h5>
+                        </div>
+                        <div class="card-body">
+                            <p id="courseName" class="mx-8">Course: Data and Computer Communication</p>
+                            <p id="courseReview" class="mx-8">Review: This course is great for understanding complex concepts.</p>
+                            <p id="courseInstructor" class="mx-8">Instructor: Dr. Daw Chaw</p>
+                            <p id="courseDate" class="mx-8">Review Date: 01/12/2022</p>
+                        </div>
+                    </div>
+                    
+                    <div id="courseDetails" class="card mt-3">
+                        <div class="card-header text-center">
+                            <h5>Course Review</h5>
+                        </div>
+                        <div class="card-body">
+                            <p id="courseName" class="mx-8">Course: Database Management System</p>
+                            <p id="courseInstructor" class="mx-8">Review: This course is great for understanding complex concepts.</p>
+                            <p id="courseReview" class="mx-8">Instructor: Dr. U Myat Min</p>
+                            <p id="courseDate" class="mx-8">Review Date: 22/1/2012</p>
+                        </div>
+                    </div>                                  
+                    
+                    <a href="review.html" class="btn btn-back">Back to Reviews</a> <!-- Centered Button -->
+                
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            // Fetch the ID from the URL
+                            const urlParams = new URLSearchParams(window.location.search);
+                            const reviewerId = urlParams.get('id');
+                
+                            // Updated reviewer data with courseInstructor and images
+                            const reviewerData = [
+                                {
+                                    id: 1,
+                                    name: "Airi Satou",
+                                    email: "airi.satou@example.com",
+                                    course: "Math",
+                                    courseInstructor: "Dr. John Doe",
+                                    review: "Experienced and highly skilled in teaching complex math concepts.",
+                                    date: "11/28/2008",
+                                    image: "images/airi-satou.jpg"
+                                },
+                                {
+                                    id: 2,
+                                    name: "Angelica Ramos",
+                                    email: "angelica.ramos@example.com",
+                                    course: "Science",
+                                    courseInstructor: "Prof. Sarah Lee",
+                                    review: "Excellent at making science engaging and accessible.",
+                                    date: "10/9/2009",
+                                    image: "images/angelica-ramos.jpg"
+                                },
+                            ];
+                
+                            // Find the reviewer based on the ID
+                            const reviewer = reviewerData.find(rev => rev.id === parseInt(reviewerId));
+                
+                            if (reviewer) {
+                                // Populate the page with the reviewer's data
+                                $('#reviewerName').text('Name: ' + reviewer.name);
+                                $('#reviewerEmail').text('Email: ' + reviewer.email);
+                                $('#courseName').text('Course: ' + reviewer.course);
+                                $('#courseInstructor').text('Instructor: ' + reviewer.courseInstructor);
+                                $('#courseReview').text('Review: ' + reviewer.review);
+                                $('#courseDate').text('Review Date: ' + reviewer.date);
+                                $('#reviewerImage').attr('src', reviewer.image);
+                            } else {
+                                alert("Reviewer not found.");
+                            }
+                        });
+                    </script>
+                </div>  
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
