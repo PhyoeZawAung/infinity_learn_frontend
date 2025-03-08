@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard - Teacher</title>
+    <link href="../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">Infinity Learn</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="bi bi-list h4"></i></button>
+        <ul class="ms-auto navbar-nav ms-auto  me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="bi bi-person-circle h3"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Profile</a></li>
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
+                            Courses
+                        </a>
+                    
+                        <a class="nav-link collapsed active" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Student
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
+                            Messages
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
+                            Notifications
+                        </a>
+                    
+                    </div> 
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Phyoe Zaw Aung
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+
+                    <!-- Write your content here -->
+                    <div class="container mt-5">
+                        <h2 class="mb-4">Student Information</h2>
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Reason for Ban</th>
+                                    <th>Actions</th>
+                                    <th>Results</th>
+                                    <th>Enrollment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="dsfsfds">
+                                    <td>12345</td>
+                                    <td>Alice Smith</td>
+                                    <td>Plagiarism</td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="banStudent(this)">Ban</button>
+                                    </td> 
+                                    <td>
+                                        
+                                        <button id="nextPageButton" class="btn btn-primary">View Results</button>
+                                    
+                                
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script>
+                                        document.getElementById('nextPageButton').addEventListener('click', function() {
+                                            window.location.href = 'profileresult.html'; // Replace with your desired page URL
+                                        });
+                                    </script>
+                                </td>  
+                                <td>
+                                        
+                                    <button id="nextPageButton" class="btn btn-primary">Enroll</button>
+                                
+                            
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                <script>
+                                    document.getElementById('nextPageButton').addEventListener('click', function() {
+                                        window.location.href = 'enrolledview.html'; // Replace with your desired page URL
+                                    });
+                                </script>
+                            </td>                                               
+                                </tr>
+                                
+                                <script>
+                                function banStudent(button) {
+                                    // You can add any additional logic here (e.g., confirmation prompt)
+                                    if (confirm("Are you sure you want to ban this student?")) {
+                                        // Redirect to another page (e.g., ban confirmation or processing page)
+                                        window.location.href ="baned.html";  // Change to your actual page
+                                    }
+                                }
+                                </script>
+                                </tr>
+                               
+                                <tr>
+                                    <td>13579</td>
+                                    <td>Carol Williams</td>
+                                    <td>Harassment</td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="banStudent(this)">Ban</button>
+                                    </td>  
+                                    <td>
+                                        
+                                        <button id="nextPageButton" class="btn btn-primary">View Results</button>
+                                    
+                                
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script>
+                                        document.getElementById('nextPageButton').addEventListener('click', function() {
+                                            window.location.href = 'profileresult.html'; // Replace with your desired page URL
+                                        });
+                                    </script>
+                                </td>  
+                                <td>
+                                        
+                                    <button id="nextPageButton" class="btn btn-primary">Enroll</button>
+                                
+                            
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                <script>
+                                    document.getElementById('nextPageButton').addEventListener('click', function() {
+                                        window.location.href = 'enrolledview.html'; // Replace with your desired page URL
+                                    });
+                                </script>
+                            </td>                                              
+                                </tr>
+                                
+                                <script>
+                                function banStudent(button) {
+                                    // You can add any additional logic here (e.g., confirmation prompt)
+                                    if (confirm("Are you sure you want to ban this student?")) {
+                                        // Redirect to another page (e.g., ban confirmation or processing page)
+                                        window.location.href ="baned.html";  // Change to your actual page
+                                    }
+                                }
+                                </script>
+                                </tr>
+                               
+                              
+                              
+                                
+                                  <tr>                                    
+                                    <td>24680</td>                                    
+                                    <td>David Brown</td>                                    
+                                    <td>Repeated Violations</td>                                    
+                                    <td>
+                                        <button class="btn btn-danger" onclick="banStudent(this)">Ban</button>
+                                    </td>
+                                    <td>
+                                        
+                                        <button id="nextPageButton" class="btn btn-primary">View Results</button>
+                                    
+                                
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script>
+                                        document.getElementById('nextPageButton').addEventListener('click', function() {
+                                            window.location.href = 'profileresult.html'; // Replace with your desired page URL
+                                        });
+                                    </script>
+                                </td>  
+                                <td>
+                                        
+                                    <button id="nextPageButton" class="btn btn-primary">Enroll</button>
+                                
+                            
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                <script>
+                                    document.getElementById('nextPageButton').addEventListener('click', function() {
+                                        window.location.href = 'enrolledview.html'; // Replace with your desired page URL
+                                    });
+                                </script>
+                            </td>                                                
+                                </tr>
+                                
+                                <script>
+                                function banStudent(button) {
+                                    // You can add any additional logic here (e.g., confirmation prompt)
+                                    if (confirm("Are you sure you want to ban this student?")) {
+                                        // Redirect to another page (e.g., ban confirmation or processing page)
+                                        window.location.href ="baned.html";  // Change to your actual page
+                                    }
+                                }
+                                </script>
+                                <tr>
+                                    <td>11223</td>
+                                    <td>Eve Davis</td>
+                                    <td>Sharing Answers</td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="banStudent(this)">Ban</button>
+                                    </td> 
+                                    <td>
+                                        
+                                        <button id="nextPageButton" class="btn btn-primary">View Results</button>
+                                    
+                                
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script>
+                                        document.getElementById('nextPageButton').addEventListener('click', function() {
+                                            window.location.href = 'profileresult.html'; // Replace with your desired page URL
+                                        });
+                                    </script>
+                                </td>   
+                                <td>
+                                        
+                                    <button id="nextPageButton" class="btn btn-primary">Enroll</button>
+                                
+                            
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+
+                                </script>
+                                <script>
+                                    document.getElementById('nextPageButton').addEventListener('click', function() {
+                                        window.location.href = 'enrolledview.html'; // Replace with your desired page URL
+                                    });
+                                
+                                </script>
+                               
+                            </td>                                             
+                                </tr>
+                                
+                                <script>
+                                function banStudent(button) {
+                                    // You can add any additional logic here (e.g., confirmation prompt)
+                                    if (confirm("Are you sure you want to ban this student?")) {
+                                        // Redirect to another page (e.g., ban confirmation or processing page)
+                                        window.location.href ="baned.html";  // Change to your actual page
+                                    }
+                                }
+                                </script>
+                                </tr>
+                                <tr>
+                                    <td>44556</td>
+                                    <td>Frank Wilson</td>
+                                    <td>Inappropriate Content</td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="banStudent(this)">Ban</button>
+                                    </td>
+                                    <td>
+                                        
+                                        <button id="nextPageButton" class="btn btn-primary">View Results</button>
+                                    
+                                
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script>
+                                        document.getElementById('nextPageButton').addEventListener('click', function() {
+                                            window.location.href = 'profileresult.html'; // Replace with your desired page URL
+                                        });
+                                    </script>
+                                </td>  
+                                <td>
+                                        
+                                    <button id="nextPageButton" class="btn btn-primary">Enroll</button>
+                                
+                            
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                <script>
+                                    document.getElementById('nextPageButton').addEventListener('click', function() {
+                                        window.location.href = 'enrolledview.html'; // Replace with your desired page URL
+                                    });
+                                </script>
+                            </td>                                               
+                                </tr>
+                                
+                                <script>
+                                function banStudent(button) {
+                                    // You can add any additional logic here (e.g., confirmation prompt)
+                                    if (confirm("Are you sure you want to ban this student?")) {
+                                        // Redirect to another page (e.g., ban confirmation or processing page)
+                                        window.location.href ="baned.html";  // Change to your actual page
+                                    }
+                                }
+                                </script>
+                                </tr>
+                                <tr>
+                                    <td>77889</td>
+                                    <td>Grace Taylor</td>
+                                    <td>Spamming</td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="banStudent(this)">Ban</button>
+                                    </td>  
+                                    <td>
+                                        
+                                            <button id="nextPageButton" class="btn btn-primary">View Results</button>
+                                        
+                                    
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                        <script>
+                                            document.getElementById('nextPageButton').addEventListener('click', function() {
+                                                window.location.href = 'result.html'; // Replace with your desired page URL
+                                            });
+                                        </script>
+                                    </td>
+                                    <td>
+                                        
+                                        <button id="nextPageButton" class="btn btn-primary">Enroll</button>
+                                    
+                                
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script>
+                                        document.getElementById('nextPageButton').addEventListener('click', function() {
+                                            window.location.href = 'enrolledview.html'; // Replace with your desired page URL
+                                        });
+                                    </script>
+                                </td>                                
+                                </tr>
+                                
+                                <script>
+                                function banStudent(button) {
+                                    // You can add any additional logic here (e.g., confirmation prompt)
+                                    if (confirm("Are you sure you want to ban this student?")) {
+                                        // Redirect to another page (e.g., ban confirmation or processing page)
+                                        window.location.href ="baned.html";  // Change to your actual page
+                                    }
+                                }
+                                </script>
+                                </tr>
+                                <tr>
+                                    <td>99001</td>
+                                    <td>Henry Anderson</td>
+                                    <td>Impersonation</td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="banStudent(this)">Ban</button>
+                                    </td> 
+                                    <td>
+                                        
+                                            <button id="nextPageButton" class="btn btn-primary">View Results</button>
+                                        
+                                    
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                        <script>
+                                            document.getElementById('nextPageButton').addEventListener('click', function() {
+                                                window.location.href = 'profileresult.html'; // Replace with your desired page URL
+                                            });
+                                        </script>
+                                     
+                                    
+                                        <td>
+                                        
+                                            <button id="nextPageButton" class="btn btn-primary">Enroll</button>
+                                        
+                                    
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                        <script>
+                                            document.getElementById('nextPageButton').addEventListener('click', function() {
+                                                window.location.href = 'enrolledview.html'; // Replace with your desired page URL
+                                            });
+                                        </script>
+                                    </td>  
+                                                             
+                                </tr>
+                            </tbody>
+                        </table></div>
+                                <script>
+                                function banStudent(button) {
+                                    // You can add any additional logic here (e.g., confirmation prompt)
+                                    if (confirm("Are you sure you want to ban this student?")) {
+                                        // Redirect to another page (e.g., ban confirmation or processing page)
+                                        window.location.href ="baned.html";  // Change to your actual page
+                                    }
+                                }
+                                </script>
+                                </tr>
+                    
+                    
+                    
+                    
+                    
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+
+                  
+            
+
+                  
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Infinity Learn 2025</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

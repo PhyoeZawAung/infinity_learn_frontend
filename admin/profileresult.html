@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #282c34; /* Dark background */
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .profile-card {
+      background: linear-gradient(135deg, #1e1e1e, #333333); /* Dark gradient background */
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      display: flex;
+      max-width: 800px;
+      width: 90%;
+      overflow: hidden;
+    }
+
+    .profile-image-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #4a148c, #880e4f); /* Gradient for image section */
+    }
+
+    .profile-image-container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+    }
+
+    .profile-image-container h2 {
+      margin-top: 20px;
+      font-size: 1.5em;
+    }
+
+    .profile-image-container p {
+      margin-top: 5px;
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .profile-details {
+      flex: 2;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .profile-details h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .profile-details p {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+
+    .made-with {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    .made-with a {
+      color: #aaa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <div class="profile-image-container">
+      <img src="profile.png" alt="Profile Picture"> 
+      <h2>John Doe</h2>
+      <p>Web Developer</p>
+    </div>
+    <div class="profile-details">
+      <h1>Profile Details</h1>
+      <p><strong>Name: </strong> Su Su Hmwe</p>
+      <p><strong>Roll_no: </strong> 3IST-16</p>
+      <p><strong>Exam Result: </strong>  pass</p>
+      <p><strong>Email:</strong>  john@example.com</p>
+      <p><strong>Course:</strong>  Compiling Techniques</p>
+      <div class="made-with">
+        Made with <span style="color: red;">❤️</span> by <a href="https://learningrobo.com" target="_blank">Learning Robo</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
