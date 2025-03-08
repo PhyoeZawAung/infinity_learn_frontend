@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard - Teacher</title>
+    <link href="../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="../common/datatable/datatables.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#more').click(function () {
+                $('#details').toggle();
+            });
+        });
+    </script>
+
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">Infinity Learn</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="bi bi-list h4"></i></button>
+        <ul class="ms-auto navbar-nav ms-auto  me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="bi bi-person-circle h3"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Profile</a></li>
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link active" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
+                            Courses
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
+                            Students
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
+                            Messages
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
+                            Notifications
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Phyoe Zaw Aung
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Courses</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Courses/course detail</li>
+                    </ol>
+                        <div class="container">
+                            <div class="course-section mb-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5 text-center">
+                                        <img src="https://placehold.co/600x400" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h2>Course Details</h2>
+                                        <p>A beginner-friendly course that introduces key data science concepts,
+                                            including Python programming, data analysis, and machine learning
+                                            fundamentals.
+                                            Perfect for those looking to start a career in data science.</p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-success">best review</span>
+                                            4.7 <span class="rating text-warning"><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                                            <span>1,420,288 students</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <i class="bi bi-calendar-check"> Last updated 2/2025</i> 
+                                            <i class="bi bi-globe"> English</i>
+                                        </div>
+                                        <button class="btn btn-primary">Edit Course</button>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="course-detail mb-4">
+                                <div class="row align-items-center">
+                                    <h2>What you'll Learn</h2>
+                                    <div class="col-sm-12">
+                                        <div class="container text-left">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <i class="bi bi-dot">Business & Markteing</i><br>
+                                                    <i class="bi bi-dot">Technology & Programming</i><br>
+                                                    <i class="bi bi-dot">Design & Creativity </i> </i><br>
+                                                </div>
+                                                <div class="col-6">
+                                                    <i class="bi bi-dot">Personal Development & Soft Skills </i><br>
+                                                    <i class="bi bi-dot">Health & Wellness</i><br>
+                                                    <i class="bi bi-dot">Finance & Investing</i><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-description mb-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <h3>Description</h3>
+                                        <p>Welcome to our <strong>Infinity Learn</strong>, where knowledge meets innovation!
+                                            Our
+                                            platform is designed to empower learners of all backgrounds by providing
+                                            high-quality, flexible, and industry-relevant courses. Whether you're looking to
+                                            enhance your skills, start a new career, or gain expertise in emerging
+                                            technologies, we offer a diverse range of courses tailored to meet the evolving
+                                            demands of various industries.
+    
+                                            Each course is carefully structured to provide an immersive learning experience
+                                            through interactive lessons, hands-on projects, real-world case studies, and
+                                            expert mentorship. With self-paced and instructor-led options available, you can
+                                            learn at your convenience while staying engaged with a community of like-minded
+                                            learners and industry professionals.</p>
+                                        <a href="#" id="more" class="text-decoration-none">Show more</a>
+                                        <div id="details">
+                                            Course Structure & Learning Approach
+    
+                                            Our courses follow a structured curriculum designed to ensure a seamless
+                                            learning experience. Each course consists of multiple modules, carefully crafted
+                                            to build your knowledge progressively. Here’s what you can expect:
+    
+                                            1. Engaging & Interactive Learning Content
+    
+                                            High-Quality Video Lectures – Professionally recorded lessons by industry
+                                            experts and educators.
+    
+                                            Downloadable Resources – Access to course materials, templates, guides, and
+                                            eBooks to reinforce learning.
+    
+                                            Quizzes & Assessments – Regular assessments to test your understanding and track
+                                            progress.
+    
+    
+                                            2. Hands-on Projects & Real-World Applications
+    
+                                            Practical projects that simulate real-world scenarios to help you apply
+                                            theoretical knowledge.
+    
+                                            Industry-relevant case studies and problem-solving exercises to enhance critical
+                                            thinking.
+    
+                                            Portfolio-building exercises to showcase your skills to potential employers.
+    
+    
+                                            3. Live Sessions & Mentorship Support
+    
+                                            Interactive live webinars and Q&A sessions with experts.
+    
+                                            Dedicated discussion forums and peer collaboration opportunities.
+    
+                                            One-on-one mentorship and career guidance to help you navigate job
+                                            opportunities.
+    
+    
+                                            4. Certification & Career Support
+    
+                                            Earn a globally recognized certificate upon successful course completion.
+    
+                                            Resume-building and job placement assistance for career advancement.
+    
+                                            Access to an exclusive alumni network and professional growth opportunities.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <h3>Course Content</h3>
+                                        <div class="d-flex justify-content-end">
+                                            <button class="btn btn-outline-success btn-sm me-2 mb-1" id="expend_all">expend all</button>
+                                            <button class="btn btn-outline-danger btn-sm mb-1" id="close_all">close all</button>
+                                        </div>
+                                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                                        aria-controls="panelsStayOpen-collapseOne">
+                                                        Business & Marketing
+                                                    </button>
+                                                </h2>
+                                                <div id="panelsStayOpen-collapseOne"
+                                                    class="accordion-collapse collapse show">
+                                                    <div class="accordion-body">
+                                                        <h5>Course:Digital Marketing Mastery</h5>
+                                                        <p>
+                                                            Learn the fundamentals of digital marketing, including
+                                                            SEO, content marketing,
+                                                            social media strategy,
+                                                            and paid advertising. This course covers the latest
+                                                            tools and techniques to drive
+                                                            online success.
+                                                        </p>
+                                                        <h6><b>Course Lessons:</b></h6>
+                                                        <p>
+                                                            <i class="bi bi-dot">Introduction to Digital
+                                                                Marketing</i><br>
+                                                            <i class="bi bi-dot">SEO & Content Marketing</i><br>
+                                                            <i class="bi bi-dot">Social Media Marketing</i><br>
+                                                            <i class="bi bi-dot">Google Ads & PPC
+                                                                Advertising</i><br>
+                                                        </p>
+                                                        <h5 class="card-title">Course:Entrepreneurship & Startup
+                                                            Growth</h5>
+                                                        <p>
+                                                            Learn how to start, fund, and grow a successful
+                                                            business. This course covers
+                                                            business models,
+                                                            market validation, fundraising, and scaling strategies.
+                                                        </p>
+                                                        <h6><b>Course Lessons:</b></h6>
+                                                        <p>
+                                                            <i class="bi bi-dot">Idea Validation & Business
+                                                                Models</i><br>
+                                                            <i class="bi bi-dot">Market Research & Customer
+                                                                Acquisition</i><br>
+                                                            <i class="bi bi-dot">Funding & Investor Pitching</i><br>
+                                                            <i class="bi bi-dot">Growth Hacking & Scaling</i><br>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                                        aria-controls="panelsStayOpen-collapseTwo">
+                                                        Technology & Programming
+                                                    </button>
+                                                </h2>
+                                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                                                    <div class="accordion-body">
+                                                        <h5>Course:Full-Stack Web Development</h5>
+                                                        <p>
+                                                            Master front-end and back-end development using
+                                                            HTML, CSS, JavaScript, React,
+                                                            Node.js,
+                                                            and databases. Build real-world projects and become
+                                                            job-ready.
+                                                        </p>
+                                                        <h6>Course Lessons:</h6>
+                                                        <p>
+                                                            <i class="bi bi-dot">HTML & CSS Fundamentals</i><br>
+                                                            <i class="bi bi-dot">JavaScript & Front-End
+                                                                Development</i><br>
+                                                            <i class="bi bi-dot">Back-End Development with
+                                                                Node.js</i><br>
+                                                            <i class="bi bi-dot">Database Management (SQL &
+                                                                MongoDB)</i><br>
+                                                        </p>
+                                                        <h5>Course:Cybersecurity Essentials
+                                                        </h5>
+                                                        <p>
+                                                            Understand the fundamentals of cybersecurity,
+                                                            ethical hacking, and risk management.
+                                                            Learn how to protect systems from cyber threats
+                                                        </p>
+                                                        <h6>Course Lessons:</h6>
+                                                        <p>
+                                                            <i class="bi bi-dot">Cybersecurity
+                                                                Fundamentals</i><br>
+                                                            <i class="bi bi-dot">Ethical Hacking & Penetration
+                                                                Testing</i><br>
+                                                            <i class="bi bi-dot">Network Security &
+                                                                Firewalls</i><br>
+                                                            <i class="bi bi-dot">Incident Response & Risk
+                                                                Management</i><br>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                                        aria-controls="panelsStayOpen-collapseThree">
+                                                        Design & Creativity
+                                                    </button>
+                                                </h2>
+                                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                                                    <div class="accordion-body">
+                                                        <h5>Course:Graphic Design with
+                                                            Photoshop & Illustrator</h5>
+                                                        <p>
+                                                            Learn graphic design principles, typography,
+                                                            branding, and Adobe Photoshop &
+                                                            Illustrator tools for creating stunning visuals.
+                                                        </p>
+                                                        <h6>Course Lessons:</h6>
+                                                        <p>
+                                                            <i class="bi bi-dot">Basics of Design & Color
+                                                                Theory</i><br>
+                                                            <i class="bi bi-dot">Logo & Branding Design</i><br>
+                                                            <i class="bi bi-dot">Social Media Graphics &
+                                                                Marketing Materials</i><br>
+                                                            <i class="bi bi-dot">Advanced Photoshop &
+                                                                Illustrator Techniques</i><br>
+                                                        </p>
+                                                        <h5>Course:UX/UI Design for Web &
+                                                            Mobile</h5>
+                                                        <p>
+                                                            Understand user experience (UX) and user interface
+                                                            (UI) design principles
+                                                            for creating intuitive websites and mobile
+                                                            applications.
+                                                        </p>
+                                                        <h6>Course Lessons:</h6>
+                                                        <p>
+                                                            <i class="bi bi-dot">UX Research &
+                                                                Wireframing</i><br>
+                                                            <i class="bi bi-dot">UI Design & Prototyping</i><br>
+                                                            <i class="bi bi-dot">Design Tools (Figma, Adobe
+                                                                XD)</i><br>
+                                                            <i class="bi bi-dot">Testing & User Feedback</i><br>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="card mb-4 mt-4">
+                                <div class="card-header">
+                                    <i class="fas fa-table me-1"></i>
+                                    Enrolled Students
+                                </div>
+                                <div class="card-body">
+                                    <table id="datatablesSimple" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Progress</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Progress</th>
+                                            </tr>
+                                        </tfoot>
+                                        
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>John Doe</td>
+                                                <td>john.doe@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-success" style="width: 75%;">75%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Jane Smith</td>
+                                                <td>jane.smith@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-info" style="width: 82%;">82%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Michael Brown</td>
+                                                <td>michael.brown@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-primary" style="width: 90%;">90%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Emily Johnson</td>
+                                                <td>emily.johnson@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-danger" style="width: 68%;">68%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Chris Wilson</td>
+                                                <td>chris.wilson@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-warning" style="width: 77%;">77%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Sarah Taylor</td>
+                                                <td>sarah.taylor@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-success" style="width: 85%;">85%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>David White</td>
+                                                <td>david.white@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-primary" style="width: 92%;">92%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Olivia Thomas</td>
+                                                <td>olivia.thomas@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-info" style="width: 79%;">79%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>James Harris</td>
+                                                <td>james.harris@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-warning" style="width: 87%;">87%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Emma Martin</td>
+                                                <td>emma.martin@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-danger" style="width: 74%;">74%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>John Doe</td>
+                                                <td>john.doe@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-success" style="width: 75%;">75%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Jane Smith</td>
+                                                <td>jane.smith@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-info" style="width: 82%;">82%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Michael Brown</td>
+                                                <td>michael.brown@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-primary" style="width: 90%;">90%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Emily Johnson</td>
+                                                <td>emily.johnson@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-danger" style="width: 68%;">68%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Chris Wilson</td>
+                                                <td>chris.wilson@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-warning" style="width: 77%;">77%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Sarah Taylor</td>
+                                                <td>sarah.taylor@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-success" style="width: 85%;">85%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>David White</td>
+                                                <td>david.white@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-primary" style="width: 92%;">92%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Olivia Thomas</td>
+                                                <td>olivia.thomas@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-info" style="width: 79%;">79%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>James Harris</td>
+                                                <td>james.harris@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-warning" style="width: 87%;">87%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Emma Martin</td>
+                                                <td>emma.martin@example.com</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-danger" style="width: 74%;">74%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    <script>
+
+                        // expend all button dom element
+                        const expend_all_btn = document.getElementById("expend_all");
+                        // close all button dom element
+                        const close_all_btn = document.getElementById("close_all");
+
+                        // add event listener to expend all button
+                        expend_all_btn.addEventListener("click", expend_all_by_click_btn);
+                        // add event listener to close all button
+                        close_all_btn.addEventListener("click", close_all_by_click_btn);
+
+                        /*
+                        open these two comment if you want to change by remove or add class
+                        expend_all_btn.addEventListener("click", expend_all_by_add_class);
+                        close_all_btn.addEventListener("click", close_all_by_remove_class);
+                        */
+
+                        /**
+                         * @description opening all accordion by adding class show to each accordion
+                         */
+                        function expend_all_by_add_class() {
+
+                            const accordions = document.getElementsByClassName("accordion-collapse");
+
+                            for (let accordion of accordions) {
+                                accordion.classList.add("show");
+                            }
+                        }
+
+                        /**
+                         * @description closing all accordion by removing class show from each accordion
+                         */
+                        function close_all_by_remove_class() {
+                            const accordions = document.getElementsByClassName("accordion-collapse");
+
+                            for (let accordion of accordions) {
+                                accordion.classList.remove("show");
+                            }
+                        }
+
+                        /**
+                         * @description opening all accordion by simulation click event on each accordion button
+                         */
+                        function expend_all_by_click_btn() {
+                            const accordion_items = document.getElementsByClassName("accordion-item");
+                            for (let item of accordion_items) {
+                                const btn = item.childNodes[1].childNodes[1];
+                                console.log(item.childNodes[3].classList.contains("show"));
+                                if (!item.childNodes[3].classList.contains("show")) {
+                                    btn.click();
+                                }
+                            }
+                        }
+
+                        /**
+                         * @description closing all accordion by simulating click event on each accordion button
+                         */
+                        function close_all_by_click_btn() {
+                            const accordion_items = document.getElementsByClassName("accordion-item");
+                            for (let item of accordion_items) {
+                                const btn = item.childNodes[1].childNodes[1];
+                                console.log(item.childNodes[3].classList.contains("show"));
+                                if (item.childNodes[3].classList.contains("show")) {
+                                    btn.click();
+                                }
+                            }
+                        }
+                    </script>
+
+                    <footer class="py-4 bg-light mt-auto">
+                        <div class="container-fluid px-4">
+                            <div class="d-flex align-items-center justify-content-between small">
+                                <div class="text-muted">Copyright &copy; Infinity Learn 2025</div>
+                                <div>
+                                    <a href="#">Privacy Policy</a>
+                                    &middot;
+                                    <a href="#">Terms &amp; Conditions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+        </div>
+        <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../common/datatable/datatables.min.js"></script>
+        <script src="js/scripts.js"></script>
+</body>
+
+</html>
