@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Teacher - Course - Create</title>
+  <link href="../../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css" rel="stylesheet" />
+  <link href="../css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../../common/ckeditor5/ckeditor5.css" />
+  <style>
+    .ck-editor__editable {
+      height: 400px !important;
+      /* Fixed height */
+      overflow: auto;
+      /* Add scrollbar if content exceeds */
+    }
+  </style>
+</head>
+
+<body class="sb-nav-fixed">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="index.html">Infinity Learn</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+        class="bi bi-list h4"></i></button>
+    <ul class="ms-auto navbar-nav ms-auto  me-3 me-lg-4">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"><i class="bi bi-person-circle h3"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#!">Profile</a></li>
+          <li><a class="dropdown-item" href="#!">Settings</a></li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><a class="dropdown-item" href="#!">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+          <div class="nav">
+            <div class="sb-sidenav-menu-heading">Menu</div>
+            <a class="nav-link" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
+              Dashboard
+            </a>
+            <a class="nav-link active" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
+              Courses
+            </a>
+            <a class="nav-link" href="/courses/list">
+              <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
+              Students
+            </a>
+            <a class="nav-link" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
+              Messages
+            </a>
+            <a class="nav-link" href="#">
+              <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
+              Notifications
+            </a>
+          </div>
+        </div>
+        <div class="sb-sidenav-footer">
+          <div class="small">Logged in as:</div>
+          Phyoe Zaw Aung
+        </div>
+      </nav>
+    </div>
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <!-- Write your content here -->
+          <div class="container">
+            <h1 class="mt-4">Courses</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item"><a href="list.html">Courses</a></li>
+              <li class="breadcrumb-item active">New</li>
+            </ol>
+
+            <div class="bs-stepper">
+              <div class="bs-stepper-header mb-3" role="tablist">
+                <!-- your steps here -->
+                <div class="step" data-target="#detail-part">
+                  <button type="button" class="step-trigger" role="tab" aria-controls="detail-part"
+                    id="course-details-part">
+                    <span class="bs-stepper-circle">1</span>
+                    <span class="bs-stepper-label">Details</span>
+                  </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#description-part">
+                  <button type="button" class="step-trigger" role="tab" aria-controls="description-part"
+                    id="information-part-trigger">
+                    <span class="bs-stepper-circle">2</span>
+                    <span class="bs-stepper-label">Description</span>
+                  </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#lesson-part">
+                  <button type="button" class="step-trigger" role="tab" aria-controls="lesson-part"
+                    id="course-lesson-part">
+                    <span class="bs-stepper-circle">3</span>
+                    <span class="bs-stepper-label">Lessons</span>
+                  </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#exam-part">
+                  <button type="button" class="step-trigger" role="tab" aria-controls="exam-part" id="course-exam-part">
+                    <span class="bs-stepper-circle">4</span>
+                    <span class="bs-stepper-label">Exam</span>
+                  </button>
+                </div>
+              </div>
+              <div class="bs-stepper-content">
+                <!-- your steps content here -->
+                <div id="detail-part" class="content" role="tabpanel" aria-labelledby="course-details-part">
+                  <div class="container">
+                    <form class="row g-3">
+                      <div class="col-12">
+                        <label for="inputEmail4" class="form-label">Title</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-12">
+                        <label for="exampleFormControlTextarea1" class="form-label">Short description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="col-12">
+                        <label for="formFile" class="form-label">Thumbnail</label>
+                        <input class="form-control" type="file" id="formFile">
+                      </div>
+
+                      <div class="col-12">
+                        <label for="inputState" class="form-label">Category</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Choose...</option>
+                          <option>web development</option>
+                          <option>software development</option>
+                          <option>android development</option>
+                          <option>Java</option>
+                          <option>C++</option>
+                          <option>Javascript</option>
+                          <option>PHP</option>
+                        </select>
+                      </div>
+                      <div class="col-12 text-end">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" id="next">next</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+                <div id="description-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+                  <!-- ckeditor -->
+                  <div id="editor">
+                  </div>
+                  <div class="mt-3 w-100 d-flex justify-content-between">
+                    <button class="btn btn-outline-secondary btn-sm" id="description-previous">previous</button>
+                    <button class="btn btn-outline-secondary btn-sm" id="description-next">next</button>
+                  </div>
+                </div>
+                <div id="lesson-part" class="content" role="tabpanel" aria-labelledby="course-lesson-part">
+                  <div id="lesson-video-list">
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <div class="row mb-3">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Lesson title</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputEmail3">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Lesson description</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Lesson Video</label>
+                          <div class="col-sm-10">
+                            <input class="form-control" type="file" id="formFile">
+                          </div>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <button onclick="addNewForm()" class="btn btn-primary">Add</button>
+                  <div class="mt-3 w-100 d-flex justify-content-between">
+                    <button class="btn btn-outline-secondary btn-sm" id="lesson-previous">previous</button>
+                    <button class="btn btn-outline-secondary btn-sm" id="lesson-next">next</button>
+                  </div>
+                </div>
+                <div id="exam-part" class="content" role="tabpanel" aria-labelledby="course-exam-part">
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+      <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; Infinity Learn 2025</div>
+            <div>
+              <a href="#">Privacy Policy</a>
+              &middot;
+              <a href="#">Terms &amp; Conditions</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="../../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+  <script src="../js/scripts.js"></script>
+  <script src="../js/new.js"></script>
+  <script type="importmap">
+			{
+				"imports": {
+					"ckeditor5": "../../common/ckeditor5/ckeditor5.js",
+					"ckeditor5/": "./ckeditor5/"
+				}
+			}
+		</script>
+  <script type="module">
+    import {
+      ClassicEditor,
+      Essentials,
+      Paragraph,
+      Bold,
+      Italic,
+      Font,
+      Link,
+      List,
+      BlockQuote,
+    } from 'ckeditor5';
+
+    ClassicEditor
+      .create(document.querySelector('#editor'), {
+        licenseKey: 'GPL', // Or <YOUR_LICENSE_KEY>
+        plugins: [Essentials, Paragraph, Bold, Italic, Font, Link, List, BlockQuote],
+        toolbar: [
+          'undo', 'redo', '|', 'bold', 'italic', '|',
+          'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
+          'numberedList', 'bulletedList', '|',
+          'BlockQuote', 'link'
+        ],
+        height: 400,
+        resize_enabled: false
+      })
+      .then(editor => {
+        window.editor = editor;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+</body>
+
+</html>
