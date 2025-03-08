@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reviewer Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4 rounded">
+            <div class="row">
+                <a href="dashboard.html">
+                    <button class="btn btn-outline-primary mb-3"><i class="bi bi-arrow-left"></i>Dashboard</button>
+                    
+                </a>
+                <hr>
+                <!-- Profile Picture & Basic Info -->
+                <div class="col-md-4 text-center">
+                    <label for="profilePicInput" class="mb-5">
+                        <img id="profilePic" src="https://via.placeholder.com/150" class="profile-pic img-fluid mb-3"
+                            alt="Profile Picture">
+                    </label>
+                    <input type="file" id="profilePicInput" accept="image/*" hidden>
+
+                    <!-- Name View Mode -->
+                    <h3 id="viewName" class="fw-bold">Zaw Linn Maung</h3>
+
+                    <!-- Name Edit Mode (Hidden Initially) -->
+                    <input type="text" id="editName" class="form-control text-center d-none">
+                </div>
+
+                <!-- Profile Details -->
+                <div class="col-md-8">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="fw-bold"><i class="bi bi-person-circle"></i> Profile Information</h5>
+                        <i class="bi bi-pencil-square text-primary fs-5" id="editProfileBtn"
+                            style="cursor: pointer;"></i>
+                    </div>
+                    <hr>
+
+                    <!-- View Mode -->
+                    <div id="viewMode">
+                        <p><i class="bi bi-envelope"></i> Email: <span id="viewEmail">johndoe@example.com</span></p>
+                        <p><i class="bi bi-telephone"></i> Phone: <span id="viewPhone">+123 456 7890</span></p>
+                        <p><i class="bi bi-book"></i> Expertise: <span id="viewExpertise">Web Development, Data
+                                Science</span></p>
+                    </div>
+
+                    <!-- Edit Mode (Hidden Initially) -->
+                    <div id="editMode" class="d-none">
+                        <div class="mb-2">
+                            <label class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                            <input type="email" id="editEmail" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label"><i class="bi bi-telephone"></i> Phone</label>
+                            <input type="text" id="editPhone" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label"><i class="bi bi-book"></i> Expertise</label>
+                            <input type="text" id="editExpertise" class="form-control">
+                        </div>
+                        <button class="btn btn-success mt-2" id="saveProfileBtn"><i class="bi bi-save"></i> Save
+                            Changes</button>
+                    </div>
+                    <h5 class="fw-bold mt-4"><i class="bi bi-bar-chart-line"></i> Review Stats</h5>
+                    <hr>
+                    <p><i class="bi bi-check-circle-fill text-success"></i> Total Reviews: 120</p>
+                    <p><i class="bi bi-hand-thumbs-up-fill text-primary"></i> Approval Rate: 85%</p>
+                    <h5 class="fw-bold mt-4"><i class="bi bi-list-task"></i> Recent Activity</h5>
+                    <hr>
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="bi bi-file-earmark-check"></i> Reviewed "Python for
+                            Beginners"</li>
+                        <li class="list-group-item"><i class="bi bi-file-earmark-x"></i> Rejected "SEO Basics"
+                            (Incomplete content)</li>
+                        <li class="list-group-item"><i class="bi bi-file-earmark-check"></i> Approved "Advanced
+                            JavaScript"</li>
+                    </ul>
+
+                    <h5 class="fw-bold mt-4"><i class="bi bi-gear"></i> Account Settings</h5>
+                    <hr>
+                    <button class="btn btn-outline-primary"><i class="bi bi-bell"></i> Notification Preferences</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#changePasswordModal"><i class="bi bi-lock"></i> Change Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/profile.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword">
+                        </div>
+                        <button type="submit" class="btn btn-success">Update Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Save Confirmation Modal -->
+    <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="saveModalLabel">📢 Infinity Learn says:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ✅ Profile Updated Successfully!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
