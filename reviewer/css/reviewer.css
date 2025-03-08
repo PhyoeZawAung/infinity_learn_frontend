@@ -1,0 +1,14 @@
+img {
+    transform: all 0.3s;
+}
+img:hover {
+    transform: scale(1.05);
+ }
+ 
+ .envelope {
+    transform: all 0.3s;
+ }
+
+ .envelope:hover {
+    transform: scale(1.05);
+ }

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+ 
+
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: #54595E;
+        }
+
+        .border-fill-color {
+            background-color: #D1E7DD;
+        }
+
+        footer {
+            background-color: #343A40
+        }
+
+        .expand_all {
+            background-color: #EBE5FC;
+            color: #6610F2;
+        }
+    </style>
+</head>
+
+<body class="">
+
+
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow ">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <div class="container">
+            <h2 class="fw-bold">Infinity Learn</h2>
+            <!-- Topbar Search -->
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-envelope envelope"></i>
+                        <!-- Counter - Messages -->
+                        <span class="badge badge-danger badge-counter">7</span>
+                    </a>
+                    <!-- Dropdown - Messages -->
+
+                </li>
+
+                <div class="topbar-divider d-none d-sm-block"></div>
+
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"> zakhar</span>
+                        <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-person bi-sm bi-fw mr-2 text-gray-400"></i>
+                            Profile
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="bi bi-box-arrow-right bi-sm bi-fw mr-2 text-gray-400"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav><!-- end of nav -->
+    <div class=" bg text-white mb-5">
+        <div class="container bg">
+            <div class=" row gx-0">
+                <div class="col ">
+                    <h2>The Complete Full-Stack Web Development Bootcamp</h2>
+                    <h6 class="fst-italic">Become a Full-Stack Web Developer with just ONE course. HTML,
+                        CSS, Javascript,
+                        Node,
+                        React, PostgreSQL, Web3 and DApps</h6>
+                    <div class="mb-3">
+                        <small>created by Dr sjofi</small>
+                    </div>
+                    <div class="mb-5">
+                        <i class="bi bi-info-circle"></i>
+                        <small>last updated 2/25</small>
+                        <i class="bi bi-globe2"></i>
+                        <small>English</small>
+                    </div>
+                </div>
+                <div class="col  d-flex justify-content-center align-items-center">
+                    <img class=" d-block mx-auto" src="/images/photo1.png" alt="study boy">
+                </div>
+            </div>
+        </div>
+    </div><!-- end of intro -->
+    <div class="clearfix container mb-5 border">
+        <h2 class="fw-bold mb-3">What you learn</h2>
+        <div class="float-start col-4 mb-3">
+            <i class="bi bi-check2-square"></i>
+            <h6 class="d-inline">Build 16 web development projects for your portfolio, ready to apply for
+                junior developer
+                jobs.</h6>
+        </div>
+        <div class="float-start col-4 mb-3">
+            <i class="bi bi-check2-square"></i>
+            <h6 class="d-inline">Build 16 web development projects for your portfolio, ready to apply for
+                junior developer
+                jobs.</h6>
+        </div>
+        <div class="float-start col-4 mb-3">
+            <i class="bi bi-check2-square"></i>
+            <h6 class="d-inline">Build 16 web development projects for your portfolio, ready to apply for
+                junior developer
+                jobs.</h6>
+        </div>
+        <div class="float-start col-4 mb-3">
+            <i class="bi bi-check2-square"></i>
+            <h6 class="d-inline">Build 16 web development projects for your portfolio, ready to apply for
+                junior developer
+                jobs.</h6>
+        </div>
+        <div class="float-start col-4 mb-3">
+            <i class="bi bi-check2-square"></i>
+            <h6 class="d-inline">Build 16 web development projects for your portfolio, ready to apply for
+                junior developer
+                jobs.</h6>
+        </div>
+        <div class="float-start col-4 mb-3">
+            <i class="bi bi-check2-square"></i>
+            <h6 class="d-inline">Build 16 web development projects for your portfolio, ready to apply for
+                junior developer
+                jobs.</h6>
+        </div>
+    </div><!-- end of what you learn -->
+    <div class=" container mb-5">
+        <h3 class="fw-bold mt-5 mb-3">Course Content</h3>
+        <div class="row">
+            <div class="col-10">
+                <div class="mb-3">
+                    <h5 class="d-inline">44 sections </h5>
+                    <i class="d-inline bi bi-dot"></i>
+                    <h5 class="d-inline">373 lectures</h5>
+                    <i class="d-inline bi bi-dot"></i>
+                    <h5 class="d-inline">61 hours 30 minutes in length</h5>
+                </div>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn expand_all float-end" id="expandAllBtn">Expand all</button>
+            </div>
+        </div>
+        <!-- end of time details -->
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class=" accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">Frontend Web Development</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">9 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">37 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">Introduction to HTML</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">8 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">49 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">Intermediate HTML</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">7 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">52 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFour">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">Multi-Page Website</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">7 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">1hour 11 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingFour">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFive">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">Introduction to CSS</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">6 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">53 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingFive">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseSix">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">CSS properties</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">9 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">1 hour 30 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingSix">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseSeven">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">Intermediate CSS</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">8 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">1 hour 11 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingSeven">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseEight">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="col fw-bold">Intermediate CSS</h4>
+                                <div class="col text-end">
+                                    <h5 class="d-inline">8 lectures</h5>
+                                    <i class="d-inline bi bi-dot"></i>
+                                    <h5 class="d-inline">1 hour 11 minutes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingEight">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                        until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes
+                        control the
+                        overall
+                        appearance, as well as the showing and hiding via CSS transitions. You can modify
+                        any of this with
+                        custom
+                        CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within
+                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end of accordion -->
+    <div class="container mb-5">
+        <h3 class="fw-bold mb-4">Requirements</h3>
+        <div class="ms-1 mb-2">
+            <i class="bi bi-circle-fill me-3"></i>
+            <h5 class="d-inline">No programming experience needed - I'll teach you everything you need to
+                know</h5>
+        </div>
+        <div class="ms-1 mb-2">
+            <i class="bi bi-circle-fill me-3"></i>
+            <h5 class="d-inline">A computer with access to the internet</h5>
+        </div>
+        <div class="ms-1 mb-2">
+            <i class="bi bi-circle-fill me-3"></i>
+            <h5 class="d-inline">No paid software required</h5>
+        </div>
+        <div class="ms-1 mb-2">
+            <i class="bi bi-circle-fill me-3"></i>
+            <h5 class="d-inline">I'll walk you through, step-by-step how to get all the software installed
+                and set up</h5>
+        </div>
+    </div><!-- end of Requirment -->
+    <div class="container mb-5">
+        <h3 class="fw-bold mb-4">Description</h3>
+        <h5>Welcome to the Complete Web Development Bootcamp,the only course you need to learn to code and
+            become a
+            full-stack web developer. With 150,000+ ratings and a 4.8 average, my Web Development course is
+            one of the
+            HIGHEST RATED courses in the history of Udemy!</h5>
+        <div data-bs-toggle="collapse" data-bs-target="#demo" id="showMore">
+            <h6 class="d-inline">show more</h6>
+            <i class="bi bi-chevron-down"> </i>
+        </div>
+        <h5 id="demo" class="collapse">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div data-bs-toggle="collapse" data-bs-target="#demo" id="showLess">
+                <h6 class="d-inline">show less</h6>
+                <i class="bi bi-chevron-down"> </i>
+            </div>
+        </h5>
+
+    </div><!-- end of description -->
+<div class="container mb-3">
+    <div class="row ">
+        <div class="col-6"></div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn btn-primary d-inline">Approve Now</button>
+            <button type="button" class="btn btn-danger d-inline">Reject</button>
+        </div>
+        </div>
+</div>
+
+    <footer class="text-white">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3">
+                    <h1 class="fw-bold mt-5">Infinity Learn</h1>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <h3 class="fw-bold mb-4">Menu</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">
+                                <h5 class="mb-3">Home</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Courses</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Instructors</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">About Us</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Contact Us</h5>
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <h3 class="fw-bold mb-4">Categories</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">
+                                <h5 class="mb-3">Web Development</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Software Development</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Data Science</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Machine Learning</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Artificial Intelligence</h5>
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <h3 class="fw-bold mb-4">Social Medias</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">
+                                <h5 class="mb-3">Facebook</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">LinkedIn</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">GitHub</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Machine Learning</h5>
+                            </a></li>
+                        <li><a href="#">
+                                <h5 class="mb-3">Artificial Intelligence</h5>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <h5 class="pb-5">Copyright © Infinity Learn Myanmar Co.Ltd. All rights reserved</h5>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.getElementById("demo").addEventListener("shown.bs.collapse", function () {
+                document.getElementById("showLess").classList.remove("d-none"); // Show "Show Less"
+                document.getElementById("showMore").classList.add("d-none"); // Hide "Show More"
+            });
+            document.getElementById("demo").addEventListener("hidden.bs.collapse", function () {
+                document.getElementById("showLess").classList.add("d-none"); // Show "Show Less"
+                document.getElementById("showMore").classList.remove("d-none"); // Hide "Show More"
+            });
+            document.getElementById("expandAllBtn").addEventListener("click", function () {
+                let isExpanded = this.textContent === "Close All";
+                document.querySelectorAll(".accordion-collapse").forEach(element => {
+                    element.classList.toggle("show",!isExpanded);
+                });
+                this.textContent = isExpanded ? "Expand All" : "Close All";
+            });
+        </script>
+    </footer>
+</body>
+
+</html>
