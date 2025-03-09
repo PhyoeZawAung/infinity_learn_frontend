@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,22 +8,103 @@
 
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-
-    <!-- FontAwesome for Icons -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .custom-link {
+            padding: 10px;
+            border-radius: 5px;
+            color: #2575fc;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .container-fluid {
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .reviewer {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #6c757d;
+        }
+        .review-text {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .review-text:hover {
+            color: #0056b3;
+        }
+        .dropdown-menu {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-item {
+            color: #4c4f5c;
+            transition: 0.3s;
+        }
+        .dropdown-item:hover {
+            color: #007bff;
+            background-color: #e9ecef;
+        }
+        .table {
+            border:none;
+            overflow: hidden;
+        }
+        .table th {
+            background-color: #2c423d;
+            color: white;
+            text-align: center;
+        }
+        .table td {
+            text-align: left; /* Set all table data to left align */
+        }
+        .table th {
+            text-align: left;
+        }
+        .table td button {
+            margin: 0;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .table td button:hover {
+            background-color: #0056b3;
+        }
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
         }
         .table-responsive {
-            margin-top: 20px;
+            overflow-x: auto;
+        }
+        #employeeTable {
+            width: 100%; /* Responsive width */
+            table-layout: fixed;
+        }
+        #employeeTable th, #employeeTable td {
+            word-wrap: break-word;
+            white-space: normal;
+            text-align: center;
+        }
+        .row.mb-3 {
+            margin-bottom: 30px;
+        }
+        .dropdown-toggle {
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+        }
+        .dropdown-toggle:hover {
+            background-color: #0056b3;
         }
     </style>
-
 </head>
 
 <body class="sb-nav-fixed">
@@ -47,33 +129,36 @@
             </li>
         </ul>
     </nav>
-
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Menu</div>
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link" href="dashboard.html">
                             <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-folder"></i></div>
-                            Courses
+                        <a class="nav-link" href="review.html" style="margin-left: 10px;">
+                            <div class="sb-nav-link-icon"><i class="bi bi-person"></i></div>
+                            Instructor
+                        </a>                        
+                        <a class="nav-link" href="review.html" style="margin-left: 10px;">
+                            <div class="sb-nav-link-icon"><i class="bi bi-person-check"></i></div>
+                            Student
+                        </a>
+                        <a class="nav-link" href="review.html" style="margin-left: 10px;">
+                            <div class="sb-nav-link-icon"><i class="bi bi-yelp"></i></div>
+                            Review
                         </a>
                         <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
-                            Students
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots"></i></i></div>
-                            Messages
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
-                            Notifications
-                        </a>
+                            <div class="sb-nav-link-icon"><i class="bi bi-person-circle"></i></div>
+                            Account Management
+                        </a> 
+                        <a class="nav-link" href="instructor_acc_create.html" style="margin-left: 10px;">
+                            <div class="sb-nav-link-icon"><i class="bi bi-person-add"></i></div>
+                            Reviewer Account
+                        </a>  
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -82,242 +167,267 @@
                 </div>
             </nav>
         </div>
+        <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>     
         <div id="layoutSidenav_content">
             <main>
-                <nav aria-label="breadcrumb" class="mt-3">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li class="breadcrumb-item">Instructor</li>
-                    </ol>
-                </nav>
-                <!--table-->
                 <div class="container-fluid px-4">
                     <!-- Write your content here -->
-                    <div class="container mt-4">
-                        <div class="card mb-4">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h5>All Teachers List</h5>
-                                
-                                <!-- Sorting Button -->
-                                <button class="btn btn-primary btn-sm" onclick="sortByName()">Sort by Name <i class="fas fa-sort"></i></button>
+                    <div class="reviewer">
+                        <h4>
+                            <a class="review-text" href="index.html">
+                                <i class="bi bi-house"></i> 
+                            </a> 
+                            <i class="bi bi-chevron-double-right"></i>
+                            <a href="instructor.html" class="review-text">Instructor</a>
+                            <a href="course.html" class="review-text">
+                            <i id="chevronIcon" class="bi bi-chevron-double-right"></i></a>
+                        </h4>
+
+</div>
+                    <!-- Make table very large width using Bootstrap grid system -->
+                    <div class="row mb-3">
+                        <!-- Sort and Search bar above the table -->
+                        <div class="col-6 d-flex">
+                            <div class="col-6 d-flex">
+                                <select id="filterSelect" class="form-control">
+                                    <option value="">Filter by Review</option>
+                                    <option value="positive">Positive Reviews</option>
+                                    <option value="negative">Negative Reviews</option>
+                                </select>
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="employeeTable" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th> <!-- Expand/Collapse Column -->
-                                                <th>Name</th>
-                                                <th>E-mail</th>
-                                                <th>Start Date</th>
-                                                <th>WorkExperience</th>
-                                                <th></th>
-                                            </tr>                
-                                        </thead>
-                                        <tbody id="teachers-list">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Biri Satou</td>
-                                                <td>moe5199@gmail.com</td>
-                                                <td> 17</td>
-                                                <td>11/28/2008</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Angelica Ramos</td>
-                                                <td>tun519@gmail.com</td>
-                                               
-                                                <td>7</td>
-                                                <td>10/9/2009</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                   <td>Ashton Cox</td>
-                                                <td>htet544@gmail.com</td>
-                                                
-                                                <td>6</td>
-                                                <td>1/12/2009</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Bradley Greer</td>
-                                                <td>hmwe32@gmail.com</td>
-                                                
-                                                <td>9</td>
-                                                <td>10/13/2012</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Ashton Cox</td>
-                                                <td>htet544@gmail.com</td>
-                                                
-                                                <td>6</td>
-                                                <td>1/12/2009</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Bradley Greer</td>
-                                                <td>hmwe32@gmail.com</td>
-                                               
-                                                <td>9</td>
-                                                <td>10/13/2012</td>     
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                    
-                                            </tr>
-                                            <tr class="text-left">
-                                                <td>7</td>
-                                                <td>Brenden Wagner</td>
-                                                <td>myat55@gmail.com</td>
-                                                
-                                                <td>12</td>
-                                                <td>6/7/2011</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr cals="text-left">
-                                                <td>8</td>
-                                                <td>Brielle Williamson</td>
-                                                <td>phyo43@gmail.com</td>
-                                                
-                                                <td>20</td>
-                                                <td>12/2/2012</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr >
-                                                <td>9</td>
-                                                <td>Bruno Nash</td>
-                                                <td>zaw66@gmail.com</td>
-                                                
-                                                <td>18</td>
-                                                <td>5/3/2011</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>Caesar Vance</td>
-                                                <td>cherry556@gmail.com</td>
-                                               
-                                                <td>11</td>
-                                                <td>12/12/2011</td>
-                                                <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                            </tr>
-                                            <tr>
-                                                <td>11</td>
-                                              <td>Caesar Vance</td>
-                                              <td>poo556@gmail.com</td>
-                                              
-                                              <td>11</td>
-                                              <td>12/12/2011</td>
-                                              <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                          </tr>
-                                          <tr>
-                                            <td>12</td>
-                                            <td>Caesuur Vance</td>
-                                            <td>cherry556@gmail.com</td>
-                                            
-                                            <td>11</td>
-                                            <td>12/12/2011</td>
-                                            <td><a href="#"><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                        </tr>
-                                        <tr> <td>13</td>
-                                          <td>Daniel</td>
-                                          <td>dan556@gmail.com</td>
-                                          
-                                          <td>11</td>
-                                          <td>12/12/2011</td>
-                                          <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                      </tr>
-                                      <tr>
-                                        <td>14</td>
-                                        <td>Kopfe</td>
-                                        <td>chit556@gmail.com</td>
-                                        
-                                        <td>19</td>
-                                        <td>12/12/2011</td>
-                                        <td><a href=""><button class="bg-primary">viewCourse</button></a></td>
-                    
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            
+                            <!-- Sort Dropdown -->
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Sort By
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                                    <li><a class="dropdown-item" href="#" onclick="sortTable(0)">id</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="sortTable(1)">email
+                                    <li><a class="dropdown-item" href="#" onclick="sortTable(2)">date</a></li>
+                                    
+                                </ul>
                             </div>
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+                            <script>
+                            function sortTable(columnIndex) {
+                                var table = document.getElementById("reviewTable");
+                                var tbody = table.getElementsByTagName("tbody")[0];
+                                var rows = Array.from(tbody.getElementsByTagName("tr"));
+
+                                var ascending = table.dataset.sortOrder === "asc" ? false : true;
+                                table.dataset.sortOrder = ascending ? "asc" : "desc";
+
+                                rows.sort(function(rowA, rowB) {
+                                    var cellA = rowA.getElementsByTagName("td")[columnIndex].textContent.trim();
+                                    var cellB = rowB.getElementsByTagName("td")[columnIndex].textContent.trim();
+
+                                    if (!isNaN(Date.parse(cellA)) && !isNaN(Date.parse(cellB))) {
+                                        return ascending ? new Date(cellA) - new Date(cellB) : new Date(cellB) - new Date(cellA);
+                                    }
+                                    if (!isNaN(cellA) && !isNaN(cellB)) {
+                                        return ascending ? cellA - cellB : cellB - cellA;
+                                    }
+                                    return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+                                });
+
+tbody.innerHTML = "";
+                                rows.forEach(row => tbody.appendChild(row));
+                            }
+                            </script>
                         </div>
                     </div>
-<!--table-->
-
+                    <div class="table-responsive">
+                        <table id="employeeTable" class="table table-striped display">
+                            <thead>
+                                <tr>
+                                    <th>ID</th> <!-- Expand/Collapse Column -->
+                                    <th>Name</th>
+                                    <th>E-mail</th>
+                                    <th>Start Date</th>
+                                    <th>Experience</th>
+                                    <th>Courses</th>
+                                </tr>                
+                            </thead>
+                            <tbody id="teachers-list">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Biri Satou</td>
+                                    <td>moe5199@gmail.com</td>
+                                    <td> 17</td>
+                                    <td>11/28/2008</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Angelica Ramos</td>
+                                    <td>tun519@gmail.com</td>
+                                   
+                                    <td>7</td>
+                                    <td>10/9/2009</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                       <td>Ashton Cox</td>
+                                    <td>htet544@gmail.com</td>
+                                    
+                                    <td>6</td>
+                                    <td>1/12/2009</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Bradley Greer</td>
+                                    <td>hmwe32@gmail.com</td>
+                                    
+                                    <td>9</td>
+                                    <td>10/13/2012</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Ashton Cox</td>
+                                    <td>htet544@gmail.com</td>
+                                    
+                                    <td>6</td>
+                                    <td>1/12/2009</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Bradley Greer</td>
+                                    <td>hmwe32@gmail.com</td>
+                                   
+                                    <td>9</td>
+                                    <td>10/13/2012</td>     
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+        
+                                </tr>
+                                <tr class="text-left">
+                                    <td>7</td>
+                                    <td>Brenden Wagner</td>
+                                    <td>myat55@gmail.com</td>
+                                    
+                                    <td>12</td>
+                                    <td>6/7/2011</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr cals="text-left">
+                                    <td>8</td>
+                                    <td>Brielle Williamson</td>
+                                    <td>phyo43@gmail.com</td>
+                                    
+                                    <td>20</td>
+                                    <td>12/2/2012</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr >
+                                    <td>9</td>
+                                    <td>Bruno Nash</td>
+                                    <td>zaw66@gmail.com</td>
+                                    
+                                    <td>18</td>
+                                    <td>5/3/2011</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Caesar Vance</td>
+                                    <td>cherry556@gmail.com</td>
+                                   
+                                    <td>11</td>
+                                    <td>12/12/2011</td>
+                                    <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                  <td>Caesar Vance</td>
+                                  <td>poo556@gmail.com</td>
+                                  
+                                  <td>11</td>
+                                  <td>12/12/2011</td>
+                                  <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                              </tr>
+                              <tr>
+                                <td>12</td>
+                                <td>Caesuur Vance</td>
+                                <td>cherry556@gmail.com</td>
+                                
+                                <td>11</td>
+                                <td>12/12/2011</td>
+                                <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                            </tr>
+                            <tr> <td>13</td>
+                              <td>Daniel</td>
+                              <td>dan556@gmail.com</td>
+                              
+                              <td>11</td>
+                              <td>12/12/2011</td>
+                              <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                          </tr>
+                          <tr>
+                            <td>14</td>
+                            <td>Kopfe</td>
+                            <td>chit556@gmail.com</td>
+                            
+                            <td>19</td>
+                            <td>12/12/2011</td>
+                            <td><a href="course.html"><button class="bg-primary">viewCourse</button></a></td>
+        
+                            </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>                
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            var table = $('#employeeTable').DataTable({
+                                "paging": true,
+                                "searching": true,
+                                "ordering": true,
+                                "info": true,
+                                "columnDefs": [
+                                    {
+                                        "targets": [5], // Date column index
+                                        "type": "date" // Specify that the Date column should be treated as a date
+                                    }
+                                ]
+                            });
+            
+                            // Handle the sorting via dropdown
+                            window.sortTable = function(colIndex) {
+                                table.order([colIndex, 'asc']).draw();
+                            }
+            
+                            // Handle the search functionality
+                            $('#searchInput').on('keyup', function() {
+                                table.search(this.value).draw();
+                            });
+                        });
+                    </script>
                 </div>
             </main>
-            
-        </div>
-    </div>
-    <!-- jQuery and DataTables Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        // Initialize DataTable
-        var table = $('#employeeTable').DataTable({
-            responsive: true,
-            paging: true,
-            searching: true,
-            ordering: true
-        });
-
-        // Toggle Row Details
-        $('#employeeTable tbody').on('click', 'td.details-control', function () {
-            var tr = $(this).closest('tr');
-            var row = table.row(tr);
-
-            if (row.child.isShown()) {
-                row.child.hide();
-                $(this).html('<i class="fas fa-chevron-right"></i>'); // Change icon back to right arrow
-            } else {
-                row.child(format(tr)).show();
-                $(this).html('<i class="fas fa-chevron-down"></i>'); // Change icon to down arrow
-            }
-        });
-
-        function format(rowData) {
-            return `<div class="p-3 bg-light border rounded">
-                        <strong>More Details:</strong>
-                        <p>Additional employee details can be displayed here.</p>
-                    </div>`;
-        }
-    });
-
-    // Sorting Function
-    let sortDirection = 'asc';
-    function sortByName() {
-        var table = $('#employeeTable').DataTable();
-        var columnIdx = 1; // Column index for Name
-        table.order([columnIdx, sortDirection]).draw();
-        sortDirection = (sortDirection === 'asc') ? 'desc' : 'asc'; // Toggle sort direction
-    }
-</script>
-
-
-    <script src="../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
+        </div>  
 </body>
 
 </html>
