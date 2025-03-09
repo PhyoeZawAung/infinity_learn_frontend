@@ -1,161 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link href="common/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Limitless Learning</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .hero-section {
-            padding: 50px 0;
-        }
-        .hero-text {
-            max-width: 500px;
-        }
-        .hero-text h1 {
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .hero-text p {
-            font-size: 16px;
-            color: #555;
-        }
-        .hero-text a {
-            text-decoration: none;
-            color: #6a0dad;
-            font-weight: bold;
-        }
-        .instructors-section {
-            background-color: #f8f9fa;
-            padding: 40px 0;
-        }
-        .instructor-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .instructor-logos img {
-            height: 60px;
-        }
-        .carousel-btn {
-            border: none;
-            background: none;
-            font-size: 24px;
-            color: #6a0dad;
-        }
-        .carousel-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .carousel-btn {
-            border: none;
-            background-color: transparent;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        #logoCarousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            white-space: nowrap;
-            gap: 20px;
-            max-width: 100%; /* Adjust width as needed */
-        }
-        .logo-item {
-            width: 80px;
-            height: auto;
-            margin: 0 10px;
-            padding: 5px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Learn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-5 py-2 position-fixed w-100" style="top: 0; left: 0; z-index: 1000;">
+    <div class="container-fluid d-flex align-items-center">
+        <!-- Logo and Brand -->
+        <div class="d-flex align-items-center">
+            <img src="./images/logo.jpg" alt="Logo" class="rounded-circle me-2" style="max-height: 40px;">
+            <a class="navbar-brand fw-bold fs-3 text-white" href="#">Infinity Learn</a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Courses</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Instructors</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+            </ul>
+
+            <!-- Search Bar with Filter -->
+            <form class="d-flex position-relative" role="search" onsubmit="searchFunction(event)">
+                <div class="dropdown me-2">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="searchFilter" data-bs-toggle="dropdown">
+                        All
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="setFilter('All')">All</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setFilter('Computer Science')">Computer Science</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setFilter('Data Structure')">Data Structure</a></li>
+                    </ul>
+                </div>
+
+                <!-- Search Input -->
+                <div class="position-relative">
+                    <input class="form-control shadow-sm" type="search" placeholder="Search" id="searchBox" 
+                        autocomplete="off" oninput="showSuggestions()" onclick="showSuggestions()" 
+                        style="width: 200px;">
+                    
+                    <!-- Suggestions Dropdown -->
+                    <ul id="suggestions" class="dropdown-menu position-absolute" 
+                        style="display: none; width: auto; min-width: 100%; top: 100%; left: 0;">
+                        <!-- Suggestions dynamically inserted -->
+                    </ul>
+                </div>
+
+                <button class="btn btn-outline-light ms-2" type="submit">Search</button>
+            </form>
+
+<a class="btn btn-light ms-2" href="guestLogin.html">Login/SignUp</a>
+        </div>
+    </div>
+</nav>
+
+
     <!-- Hero Section -->
-    <div class="container hero-section">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="hero-text">
-                    <h1>Your Path <br><span class="text-dark">to <strong>limitless learning</strong></span></h1>
-                    <p style="margin-bottom: 20px;">
-                        Join us on a journey where learning knows no bounds. Whether you're advancing your career, exploring new skills, or fueling your passion for knowledge, Infinity Learn is here to guide you every step of the way!
-                    </p>
-                    <a href="#" style="margin-top: 20px; display: inline-block;">See more Informations →</a>
+    <div class="container-fluid hero-section px-4 px-lg-5 py-5 d-flex align-items-center justify-content-center text-center" 
+    style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; position: relative; overflow: hidden;">
+    <div class="row align-items-center justify-content-center w-100">
+        <!-- Left Content (Centered Text) -->
+        <div class="col-12 col-lg-6 text-center fade-in-left">
+            <h1 class="fw-bold display-4" style="line-height: 1.2;">
+                Unlock <span class="text-warning">Your</span> Potential
+            </h1>
+            <p class="fs-5 mt-3" style="opacity: 0.9;">
+                Learn from top instructors, build real skills, and gain the confidence to succeed.
+            </p>
+            <p class="fs-6 mt-2" style="opacity: 0.8;">
+                Start your journey today—learn anytime, anywhere, at your own pace.
+            </p>
+            <a href="guestLogin.html" onclick="startLearning()" class="btn btn-warning btn-lg mt-4 px-4 shadow">Get Started</a>
+        </div>
+
+        <!-- Right Image (Moved Left & Bigger) -->
+        <div class="col-12 col-lg-5 text-center text-lg-end fade-in-right">
+            <img src="./images/header.jpeg" alt="Learning Illustration" class="img-fluid rounded" 
+                style="width: 80%; height: auto; padding: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transform: translateX(-15%);">
+        </div>
+    </div>
+    </div>
+
+    <!-- JavaScript for Scroll and Onload Events -->
+    <script>
+    // Wait for the page to load
+    window.onload = function() {
+        var fadeInLeft = document.querySelector('.fade-in-left');
+        var fadeInRight = document.querySelector('.fade-in-right');
+
+        // Add the 'loaded' class on load for the fade-in effect
+        fadeInLeft.classList.add('loaded');
+        fadeInRight.classList.add('loaded');
+    }
+
+    </script>
+
+
+
+
+
+
+    <script>
+        // Suggestions list with images
+        const suggestions = [
+            { text: "Java", img: "https://cdn-icons-png.flaticon.com/64/226/226777.png" },
+            { text: "Python", img: "https://cdn-icons-png.flaticon.com/64/1822/1822899.png" },
+            { text: "Machine Learning", img: "https://cdn-icons-png.flaticon.com/64/2875/2875146.png" },
+            { text: "Data Science", img: "https://cdn-icons-png.flaticon.com/64/4144/4144925.png" },
+            { text: "Artificial Intelligence", img: "https://cdn-icons-png.flaticon.com/64/4144/4144918.png" },
+            { text: "Web Development", img: "https://cdn-icons-png.flaticon.com/64/888/888859.png" }
+        ];
+
+        function showSuggestions() {
+            const input = document.getElementById("searchBox");
+            const suggestionsList = document.getElementById("suggestions");
+
+            // Clear previous suggestions
+            suggestionsList.innerHTML = "";
+
+            // Show dropdown if input is focused
+            suggestionsList.style.display = "block";
+
+            // Title for suggestions
+            if (input.value.trim() === "") {
+                let titleLi = document.createElement("li");
+                titleLi.classList.add("dropdown-header", "fw-bold", "text-primary");
+                titleLi.textContent = "Popular Programs";
+                suggestionsList.appendChild(titleLi);
+            }
+
+            // Filter suggestions based on input value
+            const filteredSuggestions = suggestions.filter(item =>
+                item.text.toLowerCase().includes(input.value.toLowerCase())
+            );
+
+            // Append new suggestions
+            filteredSuggestions.forEach(suggestion => {
+                let li = document.createElement("li");
+                li.classList.add("dropdown-item", "d-flex", "align-items-center");
+
+                // Image
+                let img = document.createElement("img");
+                img.src = suggestion.img;
+                img.alt = suggestion.text;
+                img.style.width = "30px";
+                img.style.height = "30px";
+                img.classList.add("me-2", "rounded-circle");
+
+                // Text
+                let span = document.createElement("span");
+                span.textContent = suggestion.text;
+
+                // Append elements
+                li.appendChild(img);
+                li.appendChild(span);
+                li.onclick = function () {
+                    input.value = suggestion.text;
+                    suggestionsList.style.display = "none";
+                };
+                suggestionsList.appendChild(li);
+            });
+
+            // Hide dropdown if no matches
+            if (filteredSuggestions.length === 0 && input.value.trim() !== "") {
+                suggestionsList.style.display = "none";
+            }
+        }
+
+
+        function adjustInputWidth(input, filteredSuggestions) {
+            // Create a temporary element to measure text width
+            let tempSpan = document.createElement("span");
+            tempSpan.style.visibility = "hidden";
+            tempSpan.style.whiteSpace = "nowrap";
+            tempSpan.style.position = "absolute";
+            document.body.appendChild(tempSpan);
+
+            // Find the widest suggestion text
+            let maxWidth = 200; // Default minimum width
+            filteredSuggestions.forEach(item => {
+                tempSpan.textContent = item.text;
+                maxWidth = Math.max(maxWidth, tempSpan.offsetWidth + 40);
+            });
+
+            // Set input width dynamically
+            input.style.width = maxWidth + "px";
+
+            // Remove temp span
+            document.body.removeChild(tempSpan);
+        }
+
+        // Hide suggestions when clicking outside
+        document.addEventListener("click", function (event) {
+            const searchBox = document.getElementById("searchBox");
+            const suggestionsList = document.getElementById("suggestions");
+
+            if (!searchBox.contains(event.target) && !suggestionsList.contains(event.target)) {
+                suggestionsList.style.display = "none";
+            }
+        });
+
+        function setFilter(category) {
+            document.getElementById('searchFilter').textContent = category;
+        }
+    </script>
+
+
+
+
+    
+    <div class="container-fluid text-center px-5  " style="background-color: rgb(236, 236, 236);">
+        <h2 class="fw-bold text-primary display-5 pt-5">Courses We Offer</h2>
+    
+        <!-- Swiper Slider -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h4>Language Proficiency</h4>
+                    <p>Learn to communicate effectively in multiple languages ...</p>
+                </div>
+                <div class="swiper-slide">
+                    <h4>Computer Science</h4>
+                    <p>Understand how computers and algorithms solve real-world problems...</p>
+                </div>
+                <div class="swiper-slide">
+                    <h4>Arts and Well Being</h4>
+                    <p>Explore creativity and mindfulness through artistic expression...</p>
+                </div>
+                <div class="swiper-slide">
+                    <h4>Business</h4>
+                    <p>Develop entrepreneurial skills and business strategies...</p>
+                </div>
+                <div class="swiper-slide">
+                    <h4>Health and Beauty</h4>
+                    <p>Discover self-care techniques for better health and confidence...</p>
                 </div>
             </div>
     
-            
-            <div class="col-md-6 text-center">
-                <img src="program.png.png" alt="Learning Illustration"
-                 class="img-fluid" style="width: 500px; height: 300px;">
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                spaceBetween: 20,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 150,
+                    modifier: 1.2,
+                    slideShadows: true,
+                },
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    1440: { slidesPerView: 3 }, /* Large laptop screens */
+                    1024: { slidesPerView: 2 }, /* Standard laptop screens */
+                    768: { slidesPerView: 2 },  /* Tablets */
+                    480: { slidesPerView: 1 }   /* Mobile devices */
+                }
+            });
+        });
+    </script>
+    
+    
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Hero Section -->
+    <div class="container-fluid hero-section px-5 px-lg-5 py-5 d-flex align-items-center justify-content-center text-center" 
+    style="background-color: rgb(236, 236, 236); position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="hero-text">
+                        <h1>Your Path to <br><span class="text-primary"><strong>Limitless Learning</strong></span></h1>
+                        <p>Join us on a journey where learning knows no bounds. Whether you're advancing your career, exploring new skills, or fueling your passion for knowledge, Infinity Learn is here to guide you every step of the way!</p>
+                        <a href="#">See more Information →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="./images/programmer.png" alt="Learning Illustration" class="img-fluid" style="width: 60%; height: auto;">
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Instructors Section -->
-    <div class="container-fluid instructors-section"> 
-    <div class="container">
-        <div class="d-flex flex-row mb-3">
-            <div class="col-6">
-                <h2 class="mb-3">Top Instructors</h2>
-                <h4 class="fw-bold">From Leading Organizations</h4>
+    <div class="container-fluid instructors-section">
+        <div class="container">
+            <div class="d-flex flex-row mb-3 justify-content-between">
+                <div>
+                    <h2 class="mb-3">Top Instructors</h2>
+                    <h4 class="fw-bold">From Leading Organizations</h4>
+                </div>
+                <div>
+                    <i class="bi bi-arrow-left-circle carousel-btn" onclick="scrollLogos(-1)"></i>
+                    <i class="bi bi-arrow-right-circle-fill carousel-btn" onclick="scrollLogos(1)"></i>
+                </div>
             </div>
-            <div class="col-6 text-end"> <!-- Changed from text-right to text-end -->
-                <i class="bi bi-arrow-left-circle"></i> <!-- Added margin-end for spacing -->
-                <i class="bi bi-arrow-right-circle-fill"></i>
-            </div> 
         </div>
     </div>
-</div>
 
+    <!-- Logo Carousel -->
+    <div class="carousel-container">
+        <button class="carousel-btn me-2" onclick="scrollLogos(-1)">&#9665;</button>
 
+        <div id="logoCarousel">
+            <img src="./images/foundation.png" alt="Tekkatho Foundation" class="img-fluid logo-item">
+            <img src="./images/bird.png" alt="MEC" class="img-fluid logo-item">
+            <img src="./images/utycc.png" alt="University" class="img-fluid logo-item">
+            <img src="./images/child.png" alt="UNICEF" class="img-fluid logo-item">
+            <img src="./images/university.png" alt="Strategy First University" class="img-fluid logo-item">
+            <img src="./images/english.png" alt="Wall Street English" class="img-fluid logo-item">
+            <img src="./images/wing.png" alt="Wing" class="img-fluid logo-item">
+            <img src="./images/band.png" alt="Band" class="img-fluid logo-item">
+            <img src="./images/crown.png" alt="Crown" class="img-fluid logo-item">
+            <img src="./images/free.png" alt="Free" class="img-fluid logo-item">
+            <img src="./images/new.png" alt="new" class="img-fluid logo-item">
+            <img src="./images/new1.png" alt="new1" class="img-fluid logo-item">
+            <img src="./images/new2.png" alt="new2" class="img-fluid logo-item">
+            <img src="./images/new3.png" alt="new3" class="img-fluid logo-item">
+            <img src="./images/new4.png" alt="new4" class="img-fluid logo-item">
+        </div>
 
-<div class="carousel-container" style="background-color: #f0f0f0;"> <!-- Change #f0f0f0 to any color you like -->
-    <button class="carousel-btn me-2" onclick="scrollLogos(-1)">&#9665;</button>
-    <div id="logoCarousel">
-        <img src="foundation.png" alt="Tekkatho Foundation" class="img-fluid logo-item">
-        <img src="bird.png" alt="MEC" class="img-fluid logo-item">
-        <img src="utycc.png" alt="University" class="img-fluid logo-item">
-        <img src="child.png" alt="UNICEF" class="img-fluid logo-item">
-        <img src="university.png" alt="Strategy First University" class="img-fluid logo-item">
-        <img src="english.png" alt="Wall Street English" class="img-fluid logo-item">
-        <img src="wing.png" alt="Wing" class="img-fluid logo-item">
-        <img src="band.png" alt="Band" class="img-fluid logo-item">
-        <img src="crown.png" alt="Crown" class="img-fluid logo-item">
-        <img src="free.png" alt="Free" class="img-fluid logo-item">
+        <button class="carousel-btn ms-2" onclick="scrollLogos(1)">&#9655;</button>
     </div>
-    <button class="carousel-btn ms-2" onclick="scrollLogos(1)">&#9655;</button>
-</div>
 
-<script>
-    function scrollLogos(direction) {
-        const carousel = document.getElementById('logoCarousel');
-        const scrollAmount = 100; // Adjust scrolling amount
-        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function scrollLogos(direction) {
-        const container = document.getElementById('logoCarousel');
-        container.scrollBy({ left: direction * 150, behavior: 'smooth' });
-    }
-</script>
-
-
-
+    <!-- JavaScript -->
+    <script>
+        function scrollLogos(direction) {
+            const carousel = document.getElementById('logoCarousel');
+            const scrollAmount = window.innerWidth > 1024 ? 200 : 100; // Adjust scroll speed based on screen size
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
