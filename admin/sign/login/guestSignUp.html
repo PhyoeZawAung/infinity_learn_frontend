@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up with Email Verification</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container-box {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .password-wrapper {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 75%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="signUpPage" class="container-box">
+        <h3 class="text-center mb-3">Sign Up</h3>
+        <form onsubmit="return sendVerificationCode()">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3 password-wrapper">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" id="password" required>
+                <!-- Toggle password visibility -->
+                <i class="fa fa-eye toggle-password" onclick="togglePassword()"></i>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Send Verification Code</button>
+            <div class="text-center mt-3">
+                <a href="guestLogin.html" class="text-decoration-none">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- VERIFICATION PAGE -->
+    <div id="verificationPage" class="container-box" style="display: none;">
+        <h3 class="text-center mb-3">Email Verification</h3>
+        <form onsubmit="return verifyCode()">
+            <div class="mb-3">
+                <label for="verificationCode" class="form-label">Enter Code</label>
+                <input type="text" class="form-control" id="verificationCode" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Verify & Sign Up</button>
+            <div class="text-center mt-3">
+                <a href="guestSignup.html" onclick="showLoginPage()" class="text-decoration-none">Back to SignUp</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    let generatedCode = "";
+
+    function sendVerificationCode() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        if (!email || !password) {
+            alert("Please fill in both email and password fields!");
+            return false;
+        }
+
+        // Generate a 6-digit random code
+        generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+        // Simulate email sending (for demo purposes, showing it in an alert)
+        alert("A verification code has been sent to " + email + ". Your code: " + generatedCode);
+
+        // Switch to the verification page
+        document.getElementById("signUpPage").style.display = "none";
+        document.getElementById("verificationPage").style.display = "block";
+        
+        return false; // Prevent form submission
+    }
+
+    function verifyCode() {
+        const enteredCode = document.getElementById("verificationCode").value;
+
+        if (enteredCode === generatedCode) {
+            alert("Email verified successfully! Registration complete.");
+            return true; // Proceed with account creation
+        } else {
+            alert("Invalid verification code. Please try again.");
+            return false;
+        }
+    }
+
+   
+
+        // Toggle the input type between "password" and "text"
+        function togglePassword() {
+        let passwordField = document.getElementById("password");
+        let eyeIcon = document.getElementById("eyeIcon");
+        
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            eyeIcon.classList.remove("fa-eye-slash");
+            eyeIcon.classList.add("fa-eye");
+        } else {
+            passwordField.type = "password";
+            eyeIcon.classList.remove("fa-eye");
+            eyeIcon.classList.add("fa-eye-slash");
+        }
+    }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
